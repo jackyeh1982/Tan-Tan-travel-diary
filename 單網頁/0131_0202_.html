@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台南三日遊行程表 (含地圖導航)</title>
+    <style>
+        :root {
+            --primary-color: #e67e22;
+            --secondary-color: #34495e;
+            --accent-color: #f1c40f;
+            --bg-color: #f8f9fa;
+        }
+
+        body {
+            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(135deg, #e67e22 0%, #000ed3 100%);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        .hotel-info {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 5px solid var(--accent-color);
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .day-card {
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .day-header {
+            background: var(--secondary-color);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .day-header h2 { margin: 0; font-size: 1.25rem; }
+        .day-focus { font-size: 0.9rem; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; }
+
+        .schedule-item {
+            display: flex;
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .schedule-item:last-child { border-bottom: none; }
+
+        .time {
+            min-width: 100px;
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 0.95rem;
+        }
+
+        .content h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.1rem;
+            color: #2c3e50;
+        }
+
+        .map-link {
+            text-decoration: none;
+            color: #2c3e50;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .map-link:hover {
+            color: var(--primary-color);
+        }
+
+        .map-icon {
+            margin-left: 5px;
+            font-size: 0.8rem;
+            background: #eee;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .content p {
+            margin: 5px 0 0 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .food-tag {
+            display: inline-block;
+            background: #fff3e0;
+            color: #e67e22;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin-top: 8px;
+            margin-right: 5px;
+            border: 1px solid #ffe0b2;
+        }
+
+        .important {
+            color: #d35400;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            .schedule-item { flex-direction: column; }
+            .time { margin-bottom: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>府城古都 3 日遊行程表</h1>
+    <h3>2026/01/31 (六) - 02/02 (一)</h3>
+</header>
+
+<div class="container">
+    <div class="hotel-info">
+        <strong>🏨 住宿資訊：<a href="https://www.google.com/maps/search/?api=1&query=台南富信大飯店" class="map-link" target="_blank">台南富信大飯店<span class="map-icon">📍導航</span></a></strong><br>
+        台南市北區成功路336號 (近國華街、丹丹漢堡成功店)
+    </div>
+
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 1: 1/31 (週六)</h2>
+            <span class="day-focus">文藝與古堡</span>
+        </div>
+        <div class="schedule-item">
+            <div class="time">07:00-10:00</div>
+            <div class="content">
+                <h3>路程《南下》</h3>
+                <p class="important">前往南科考古館預計３小時（不含中途休息時間）。</p>
+                <p> </p>
+            </div>
+        </div>
+        <div class="schedule-item">
+            <div class="time">10:00-12:00</div>
+            <div class="content">
+                <h3><a href="https://www.google.com/maps/search/?api=1&query=國立臺灣史前文化博物館南科考古館" class="map-link" target="_blank">南科考古館<span class="map-icon">📍導航</span></a></h3>
+                <p class="important">週六正常開放，冷氣強又好逛，抵台南首站首選。</p>
+            </div>
+        </div>
+        <div class="schedule-item">
+            <div class="time">12:00-12:30</div>
+            <div class="content">
+                <h3>車程《往安平》</h3>
+                <p> </p>
+            </div>
+        </div>
+        <div class="schedule-item">
+            <div class="time">12:30-14:30</div>
+            <div class="content">
+                <h3>安平老街美食巡禮</h3>
+                <p class="important">推薦：文章牛肉湯、阿財牛肉湯、方蘭川布丁、得意蝦餅、安平小舖蝦餅、孫家小卷米粉、歐家蚵仔煎、王氏魚皮、安平手工蛋捲周氏蝦捲。</p>
+                <div>
+                    <span class="food-tag">牛肉湯</span><span class="food-tag">蝦捲</span><span class="food-tag">布丁</span>
+                </div>
+            </div>
+        </div>
+        <div class="schedule-item">
+            <div class="time">14:30-16:00</div>
+            <div class="content">
+                <h3><a href="https://www.google.com/maps/search/?api=1&query=安平古堡" class="map-link" target="_blank">安平古堡<span class="map-icon">📍導航</span></a></h3>
+                <p class="important">探索熱蘭遮城，登高俯瞰安平。</p>
+            </div>
+        </div>
+        <div class="schedule-item">
+            <div class="time">16:00-18:30</div>
+            <div class="content">
+                <h3>飯店休息：<a href="https://www.google.com/maps/search/?api=1&query=台南富信大飯店" class="map-link" target="_blank">台南富信大飯店<span class="map-icon">📍導航</span></a></h3>
+                <div>
+                <p class="important"> 《Check-in & 點心》</p>
+                    <span class="food-tag">Autumucanele 可麗露專賣店</span><span class="food-tag">緣味東山鴨頭</span>                </div>
+            </div>
+        </div>
+        <div class="schedule-item">
+            <div class="time">18:30-21:00</div>
+            <div class="content">
+                <h3><a href="https://www.google.com/maps/search/?api=1&query=神農街" class="map-link" target="_blank">國華街 & 神農街<span class="map-icon">📍導航</span></a></h3>
+                <p class="important">國華街 晚餐：鴨米脆皮薯條、阿松割包、一味品碗粿、達也濱家漁場、永樂燒肉飯。<br>神農街 康樂街牛肉湯、富盛號。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 2: 2/01 (週日)</h2>
+            <span class="day-focus">奇美與十鼓</span>
+        </div>
+        <div class="schedule-item">
+            <div class="time">07:00-07:30</div>
+            <div class="content">
+                <h3>《起床》</h3>
+                <p> </p>
+            </div>
+        </div>
+        <div class="schedule-item">
+            <div class="time">07:30-08:00</div>
+            <div class="content">
+                <h3>早餐《丹丹漢堡 成功店》</h3>
+                <p> </p>
+            </div>
+        </div>
+        <div class="schedule-item">
+            <div class="time">08:30-12:30</div>
+            <div class="content">
+                <h3><a href="https://www.google.com/maps/search/?api=1&query=奇美博物館" class="map-link" target="_blank">奇美博物館<span class="map-icon">📍導航</span></a></h3>
+                <p class="important">注意：記得事先預約門票。</p>
+            </div>
+        </div>
+        <div class="schedule-item">
+            <div class="time">12:30-14:00</div>
+            <div class="content">
+                <h3>中午午餐</h3>
+                <p class="important">博物館內或附近覓食。</p>
+            </div>
+        </div>
+        <div class="schedule-item">
+            <div class="time">14:00-15:30</div>
+            <div class="content">
+                <h3><a href="https://www.google.com/maps/search/?api=1&query=奇美食品幸福工廠" class="map-link" target="_blank">奇美食品幸福觀光工廠<span class="map-icon">📍導航</span></a></h3>
+                <p class="important">週日正常營業，有 DIY 活動與可愛公仔可拍。</p>
+            </div>
+        </div>
+        <div class="schedule-item">
+            <div class="time">15:30-17:30</div>
+            <div class="content">
+                <h3><a href="https://www.google.com/maps/search/?api=1&query=十鼓文創園區" class="map-link" target="_blank">十鼓仁糖文創園區<span class="map-icon">📍導航</span></a></h3>
+                <p class="important">推薦待到黃昏，享受唯美的夜間燈光環境。</p>
+            </div>
+        </div>
+        <div class="schedule-item">
+            <div class="time">17:30-19:00</div>
+            <div class="content">
+                <h3>飯店休息：<a href="https://www.google.com/maps/search/?api=1&query=台南富信大飯店" class="map-link" target="_blank">台南富信大飯店<span class="map-icon">📍導航</span></a></h3>
+                <div>
+              </div>
+            </div>
+        </div>
+        <div class="schedule-item">
+            <div class="time">19:00-22:00</div>
+            <div class="content">
+                <h3><a href="https://www.google.com/maps/search/?api=1&query=台南花園夜市" class="map-link" target="_blank">花園夜市<span class="map-icon">📍導航</span></a></h3>
+                <p class="important">週日有開！台南必訪的大型夜市。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 3: 2/02 (週一)</h2>
+            <span class="day-focus">自然生態與回程</span>
+        </div>
+        <div class="schedule-item">
+            <div class="time">08:30-10:00</div>
+            <div class="content">
+                <h3>起床</h3>
+                <p class="important">早餐 & 整理行李</p>
+            </div>
+        </div>
+        <div class="schedule-item">
+            <div class="time">10:00-10:30</div>
+            <div class="content">
+                <h3>退房</h3>
+            </div>
+        </div>
+        <div class="schedule-item">
+            <div class="time">10:30-12:00</div>
+            <div class="content">
+                <h3><a href="https://www.google.com/maps/search/?api=1&query=四草綠色隧道" class="map-link" target="_blank">四草綠色隧道<span class="map-icon">📍導航</span></a></h3>
+                <p class="important">週一人較少，搭竹筏穿梭「台江版亞馬遜」。</p>
+            </div>
+        </div>
+        <div class="schedule-item">
+            <div class="time">12:00-14:00</div>
+            <div class="content">
+                <h3><a href="https://www.google.com/maps/search/?api=1&query=紅瓦町炸蝦壽司" class="map-link" target="_blank">午餐：紅瓦町炸蝦壽司<span class="map-icon">📍導航</span></a></h3>
+                <p class="important">吃飽後可順手買齊伴手禮，準備啟程北返。<br>《往鹽山車程約40分鐘》</p>
+            </div>
+        </div>
+        <div class="schedule-item">
+            <div class="time">14:00-20:00</div>
+            <div class="content">
+                <h3>七股鹽山</h3>
+                <p class="important">北上《回程》溫暖的家預計３小時（不含中途休息時間 不含下午回到北部後下班尖峰時段），台61轉台84轉國道1號。</p>
+            </div>
+        </div>
+        <div class="schedule-item">
+            <div class="time">14:00-20:00</div>
+            <div class="content">
+                <h3>北上《回程》</h3>
+                <p class="important">溫暖的家預計３小時（不含中途休息時間 不含下午回到北部後下班尖峰時段）。</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
