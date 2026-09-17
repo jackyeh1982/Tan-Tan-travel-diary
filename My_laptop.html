@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Information Report</title>
+    <style>
+        :root {
+            --primary-color: #2b529a;
+            --primary-light: #eef5fd;
+            --border-color: #b1c3ed;
+            --bg-color: #f4f7fc;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-muted: #666666;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Microsoft JhengHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 12px;
+            padding-bottom: 60px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* 標題樣式 */
+        header {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            padding: 5px;
+            text-align: center;
+            margin-bottom: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        header h1 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            word-break: break-word;
+        }
+
+        /* 選單：改為 wrap 全部換行顯示 */
+        nav {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 2px;
+            padding: 2px;
+            margin-bottom: 2px;
+            display: flex;
+            flex-wrap: wrap; /* 自動換行 */
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 5px 5px;
+            background-color: var(--primary-light);
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-align: center;
+            display: inline-block;
+        }
+
+        nav a:active {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        /* 卡片區域 */
+        .section-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            scroll-margin-top: 10px;
+        }
+
+        .section-header {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 10px 16px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .sub-header {
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            padding: 8px 16px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* 資料條目列 */
+        .data-row {
+            display: flex;
+            flex-direction: column;
+            padding: 8px 16px;
+            border-bottom: 1px solid #edf2f7;
+        }
+
+        .data-row:last-child {
+            border-bottom: none;
+        }
+
+        .data-label {
+            font-weight: bold;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 2px;
+        }
+
+        .data-value {
+            color: var(--text-main);
+            font-size: 0.95rem;
+            word-break: break-word;
+        }
+
+        /* 浮動 Top 按鈕 */
+        .back-to-top {
+            position: fixed;
+            bottom: 16px;
+            right: 16px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            padding: 10px 16px;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+            z-index: 1000;
+        }
+
+        /* 平板與電腦大螢幕佈局 */
+        @media (min-width: 600px) {
+            body {
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .data-row {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .data-label {
+                width: 40%;
+                margin-bottom: 0;
+                font-size: 0.95rem;
+            }
+
+            .data-value {
+                width: 60%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<a id="TOC"></a>
+
+<div class="container">
+    <header>
+        <h1>ASUS TUF GAMING A17</h1>
+    </header>
+
+    <!-- 換行選單 -->
+    <nav>
+        <a href="#Overall">總覽</a>
+        <a href="#Operating System">操作系統</a>
+        <a href="#Processor & MainBoard">處理器&主板</a>
+        <a href="#Memory Device">存儲設備</a>
+        <a href="#Drives">驅動</a>
+        <a href="#Display">顯卡</a>
+        <a href="#Network">網絡</a>
+        <a href="#Other Device">其他設備</a>
+    </nav>
+
+    <!-- Overall -->
+    <section class="section-card" id="Overall">
+        <div class="section-header">Overall</div>
+        <div class="data-row"><div class="data-label">作業系統</div><div class="data-value">Microsoft Windows 11 家用版</div></div>
+        <div class="data-row"><div class="data-label">處理器</div><div class="data-value">AMD Ryzen 7 4800H with Radeon Graphics</div></div>
+        <div class="data-row"><div class="data-label">顯示卡</div><div class="data-value">NVIDIA GeForce GTX 1650 Ti (4.0 GB) / AMD Radeon(TM) Graphics (512.0 MB)</div></div>
+        <div class="data-row"><div class="data-label">存儲器</div><div class="data-value">6.1 GB 可用 (15.4 GB 總計)</div></div>
+        <div class="data-row"><div class="data-label">顯示器</div><div class="data-value">一般 PnP 監視器 (1920 x 1080 @ 60 Hz)</div></div>
+        <div class="data-row"><div class="data-label">磁碟存放裝置</div><div class="data-value">296.5 GB 可用 (1389.4 GB 總計)</div></div>
+        <div class="data-row"><div class="data-label">音訊</div><div class="data-value">Realtek High Definition Audio</div></div>
+        <div class="data-row"><div class="data-label">主板</div><div class="data-value">ASUSTeK COMPUTER INC. (FA706II)</div></div>
+        <div class="data-row"><div class="data-label">鼠標</div><div class="data-value">USB 輸入裝置</div></div>
+        <div class="data-row"><div class="data-label">鍵盤</div><div class="data-value">HID Keyboard Device</div></div>
+    </section>
+
+    <!-- Operating System -->
+    <section class="section-card" id="Operating System">
+        <div class="section-header">Operating System</div>
+        <div class="sub-header">電腦系統</div>
+        <div class="data-row"><div class="data-label">電腦名稱</div><div class="data-value">LAPTOP-ICQHGEJ6</div></div>
+        <div class="data-row"><div class="data-label">用戶名稱</div><div class="data-value">犀利貓</div></div>
+        <div class="data-row"><div class="data-label">組織</div><div class="data-value">NULL</div></div>
+        
+        <div class="sub-header">操作系統</div>
+        <div class="data-row"><div class="data-label">操作系統名稱</div><div class="data-value">Microsoft Windows 11 家用版</div></div>
+        <div class="data-row"><div class="data-label">操作系統版本</div><div class="data-value">10.0.26200</div></div>
+        <div class="data-row"><div class="data-label">產品ID</div><div class="data-value">00000-00000-00000-00000</div></div>
+        <div class="data-row"><div class="data-label">系統正常運行時間</div><div class="data-value">2026/9/15 下午 05:49:48</div></div>
+        <div class="data-row"><div class="data-label">Internet Explorer版本</div><div class="data-value">11.1882.26100.0</div></div>
+        <div class="data-row"><div class="data-label">Microsoft DirectX版本</div><div class="data-value">9.0c(4.09.00.0904)</div></div>
+        <div class="data-row"><div class="data-label">OpenGL 版本</div><div class="data-value">10.0.26100.9278 (WinBuild.160101.0800)</div></div>
+        
+        <div class="sub-header">Registry</div>
+        <div class="data-row"><div class="data-label">最大大小</div><div class="data-value">4095 MB</div></div>
+        <div class="data-row"><div class="data-label">目前大小</div><div class="data-value">250 MB</div></div>
+        <div class="data-row"><div class="data-label">狀態</div><div class="data-value">OK</div></div>
+    </section>
+
+    <!-- Processor & MainBoard -->
+    <section class="section-card" id="Processor & MainBoard">
+        <div class="section-header">Processor & MainBoard</div>
+        <div class="sub-header">中央處理器</div>
+        <div class="data-row"><div class="data-label">CPU名稱</div><div class="data-value">AMD Ryzen 7 4800H with Radeon Graphics</div></div>
+        <div class="data-row"><div class="data-label">邏輯處理器數量</div><div class="data-value">16</div></div>
+        <div class="data-row"><div class="data-label">代碼名稱</div><div class="data-value">模型 0，步驟 1</div></div>
+        <div class="data-row"><div class="data-label">廠家</div><div class="data-value">AuthenticAMD</div></div>
+        <div class="data-row"><div class="data-label">目前鎖定速度</div><div class="data-value">2900 Mhz</div></div>
+        <div class="data-row"><div class="data-label">最大鎖定速度</div><div class="data-value">2900 Mhz</div></div>
+        <div class="data-row"><div class="data-label">電壓</div><div class="data-value">1.2V</div></div>
+        <div class="data-row"><div class="data-label">外頻</div><div class="data-value">100 Mhz</div></div>
+        <div class="data-row"><div class="data-label">序列號</div><div class="data-value">----------------</div></div>
+        <div class="data-row"><div class="data-label">CPU ID</div><div class="data-value">AMD64 Family 23 Model 96 Stepping 1</div></div>
+        <div class="data-row"><div class="data-label">接口標識</div><div class="data-value">FP6</div></div>
+        <div class="data-row"><div class="data-label">L1 - Cache</div><div class="data-value">512 KB</div></div>
+        <div class="data-row"><div class="data-label">L2 - Cache</div><div class="data-value">4096 KB</div></div>
+        <div class="data-row"><div class="data-label">L3 - Cache</div><div class="data-value">8192 KB</div></div>
+        
+        <div class="sub-header">主板</div>
+        <div class="data-row"><div class="data-label">型號</div><div class="data-value">FA706II</div></div>
+        <div class="data-row"><div class="data-label">廠家</div><div class="data-value">ASUSTeK COMPUTER INC.</div></div>
+        <div class="data-row"><div class="data-label">序列號</div><div class="data-value">----------------</div></div>
+        <div class="data-row"><div class="data-label">基本輸入/輸出系統名稱</div><div class="data-value">FA706II.316</div></div>
+        <div class="data-row"><div class="data-label">基本輸入/輸出系統供應商</div><div class="data-value">American Megatrends Inc.</div></div>
+        <div class="data-row"><div class="data-label">SMBIOS版本</div><div class="data-value">FA706II.316</div></div>
+        <div class="data-row"><div class="data-label">基本輸入輸出系統日期</div><div class="data-value">2021/3/12</div></div>
+        
+        <div class="sub-header">基本輸入輸出系統功能</div>
+        <div class="data-row"><div class="data-label">PCI is supported</div><div class="data-value">是</div></div>
+        <div class="data-row"><div class="data-label">BIOS is Upgradable (Flash)</div><div class="data-value">是</div></div>
+        <div class="data-row"><div class="data-label">BIOS shadowing is allowed</div><div class="data-value">是</div></div>
+        <div class="data-row"><div class="data-label">Boot from CD is supported</div><div class="data-value">是</div></div>
+        <div class="data-row"><div class="data-label">Selectable Boot is supported</div><div class="data-value">是</div></div>
+        <div class="data-row"><div class="data-label">BIOS ROM is socketed</div><div class="data-value">是</div></div>
+        <div class="data-row"><div class="data-label">EDD Specification is supported</div><div class="data-value">是</div></div>
+        <div class="data-row"><div class="data-label">Int 13h - Floppy Services</div><div class="data-value">是</div></div>
+        <div class="data-row"><div class="data-label">Int 5h, Print Screen Service</div><div class="data-value">是</div></div>
+        <div class="data-row"><div class="data-label">Int 9h, 8042 Keyboard services</div><div class="data-value">是</div></div>
+        <div class="data-row"><div class="data-label">Int 14h, Serial Services</div><div class="data-value">是</div></div>
+        <div class="data-row"><div class="data-label">Int 17h, printer services</div><div class="data-value">是</div></div>
+        <div class="data-row"><div class="data-label">ACPI supported</div><div class="data-value">是</div></div>
+        <div class="data-row"><div class="data-label">USB Legacy is supported</div><div class="data-value">是</div></div>
+    </section>
+
+    <!-- Memory Device -->
+    <section class="section-card" id="Memory Device">
+        <div class="section-header">Memory Device</div>
+        <div class="sub-header">存儲資源</div>
+        <div class="data-row"><div class="data-label">總內存</div><div class="data-value">15.4 GB</div></div>
+        <div class="data-row"><div class="data-label">已使用內存</div><div class="data-value">9.4 GB</div></div>
+        <div class="data-row"><div class="data-label">剩餘內存</div><div class="data-value">6.1 GB</div></div>
+        <div class="data-row"><div class="data-label">內存使用情況</div><div class="data-value">60%</div></div>
+        
+        <div class="sub-header">物理內存 (Slot 1)</div>
+        <div class="data-row"><div class="data-label">存儲體</div><div class="data-value">P0 CHANNEL A</div></div>
+        <div class="data-row"><div class="data-label">描述</div><div class="data-value">Physical Memory 0</div></div>
+        <div class="data-row"><div class="data-label">設備定位</div><div class="data-value">DIMM 0</div></div>
+        <div class="data-row"><div class="data-label">容量</div><div class="data-value">8.0 GB</div></div>
+        <div class="data-row"><div class="data-label">速度</div><div class="data-value">2667 Mhz</div></div>
+        <div class="data-row"><div class="data-label">廠家</div><div class="data-value">Unknown</div></div>
+        <div class="data-row"><div class="data-label">形狀因數</div><div class="data-value">SODIMM</div></div>
+        
+        <div class="sub-header">物理內存 (Slot 2)</div>
+        <div class="data-row"><div class="data-label">存儲體</div><div class="data-value">P0 CHANNEL B</div></div>
+        <div class="data-row"><div class="data-label">描述</div><div class="data-value">Physical Memory 1</div></div>
+        <div class="data-row"><div class="data-label">設備定位</div><div class="data-value">DIMM 0</div></div>
+        <div class="data-row"><div class="data-label">容量</div><div class="data-value">8.0 GB</div></div>
+        <div class="data-row"><div class="data-label">速度</div><div class="data-value">3200 Mhz</div></div>
+        <div class="data-row"><div class="data-label">廠家</div><div class="data-value">Micron Technology</div></div>
+        <div class="data-row"><div class="data-label">形狀因數</div><div class="data-value">SODIMM</div></div>
+    </section>
+
+    <!-- Drives -->
+    <section class="section-card" id="Drives">
+        <div class="section-header">Drives</div>
+        <div class="sub-header">磁盤驅動器 (內建)</div>
+        <div class="data-row"><div class="data-label">名稱</div><div class="data-value">KINGSTON OM8PCP3512F-AB</div></div>
+        <div class="data-row"><div class="data-label">媒體類型</div><div class="data-value">Fixed hard disk media</div></div>
+        <div class="data-row"><div class="data-label">容量</div><div class="data-value">476.9 GB</div></div>
+        <div class="data-row"><div class="data-label">接口類型</div><div class="data-value">SCSI</div></div>
+        
+        <div class="sub-header">磁盤驅動器 (外接)</div>
+        <div class="data-row"><div class="data-label">名稱</div><div class="data-value">WD Elements 1042 USB Device</div></div>
+        <div class="data-row"><div class="data-label">媒體類型</div><div class="data-value">External hard disk media</div></div>
+        <div class="data-row"><div class="data-label">容量</div><div class="data-value">931.5 GB</div></div>
+        <div class="data-row"><div class="data-label">接口類型</div><div class="data-value">USB</div></div>
+        
+        <div class="sub-header">IDE控制器</div>
+        <div class="data-row"><div class="data-label">名稱</div><div class="data-value">Standard SATA AHCI Controller</div></div>
+        <div class="data-row"><div class="data-label">狀態</div><div class="data-value">OK / Error (請參閱明細)</div></div>
+    </section>
+
+    <!-- Display -->
+    <section class="section-card" id="Display">
+        <div class="section-header">Display</div>
+        <div class="sub-header">獨立顯卡</div>
+        <div class="data-row"><div class="data-label">名稱</div><div class="data-value">NVIDIA GeForce GTX 1650 Ti</div></div>
+        <div class="data-row"><div class="data-label">廠家</div><div class="data-value">NVIDIA</div></div>
+        <div class="data-row"><div class="data-label">內存大小</div><div class="data-value">4.0 GB</div></div>
+        <div class="data-row"><div class="data-label">目前刷新率</div><div class="data-value">60 Hz</div></div>
+        <div class="data-row"><div class="data-label">驅動版本</div><div class="data-value">32.0.16.1656</div></div>
+        
+        <div class="sub-header">內核顯卡</div>
+        <div class="data-row"><div class="data-label">名稱</div><div class="data-value">AMD Radeon(TM) Graphics</div></div>
+        <div class="data-row"><div class="data-label">廠家</div><div class="data-value">Advanced Micro Devices, Inc.</div></div>
+        <div class="data-row"><div class="data-label">內存大小</div><div class="data-value">512.0 MB</div></div>
+        <div class="data-row"><div class="data-label">目前刷新率</div><div class="data-value">120 Hz</div></div>
+        
+        <div class="sub-header">顯示器</div>
+        <div class="data-row"><div class="data-label">名稱</div><div class="data-value">一般 PnP 監視器</div></div>
+        <div class="data-row"><div class="data-label">解析度</div><div class="data-value">1920 x 1080</div></div>
+        <div class="data-row"><div class="data-label">狀態</div><div class="data-value">OK</div></div>
+    </section>
+
+    <!-- Network -->
+    <section class="section-card" id="Network">
+        <div class="section-header">Network</div>
+        <div class="sub-header">Wi-Fi</div>
+        <div class="data-row"><div class="data-label">產品名稱</div><div class="data-value">Realtek 8822CE Wireless LAN 802.11ac PCI-E NIC</div></div>
+        <div class="data-row"><div class="data-label">MAC地址</div><div class="data-value">70:66:55:5E:5D:A7</div></div>
+        
+        <div class="sub-header">乙太網路</div>
+        <div class="data-row"><div class="data-label">產品名稱</div><div class="data-value">Realtek PCIe GbE Family Controller</div></div>
+        <div class="data-row"><div class="data-label">MAC地址</div><div class="data-value">A8:5E:45:38:82:85</div></div>
+
+        <div class="sub-header">虛擬網路 (VMware)</div>
+        <div class="data-row"><div class="data-label">VMnet1 MAC</div><div class="data-value">00:50:56:C0:00:01</div></div>
+        <div class="data-row"><div class="data-label">VMnet8 MAC</div><div class="data-value">00:50:56:C0:00:08</div></div>
+    </section>
+
+    <!-- Other Device -->
+    <section class="section-card" id="Other Device">
+        <div class="section-header">Other Device</div>
+        <div class="sub-header">音效設備</div>
+        <div class="data-row"><div class="data-label">Realtek Audio</div><div class="data-value">Realtek High Definition Audio (OK)</div></div>
+        <div class="data-row"><div class="data-label">AMD Audio</div><div class="data-value">AMD High Definition Audio Device (OK)</div></div>
+        <div class="data-row"><div class="data-label">NVIDIA Audio</div><div class="data-value">NVIDIA High Definition Audio (OK)</div></div>
+        
+        <div class="sub-header">輸入設備</div>
+        <div class="data-row"><div class="data-label">滑鼠</div><div class="data-value">USB 輸入裝置 / HID-compliant mouse</div></div>
+        <div class="data-row"><div class="data-label">鍵盤</div><div class="data-value">HID Keyboard / 標準 PS/2 鍵盤</div></div>
+        
+        <div class="sub-header">USB控制器</div>
+        <div class="data-row"><div class="data-label">控制器</div><div class="data-value">AMD USB 3.10 可延伸主機控制器 (OK)</div></div>
+    </section>
+</div>
+
+<a href="#TOC" class="back-to-top">▲ Top</a>
+
+</body>
+</html>
