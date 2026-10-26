@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🇯🇵 7天6夜 日本北海道自駕夢幻之旅 (6/6 - 6/12)</title>
+
+    <!-- 清除網頁快取標籤 (No-Cache Meta Tags) -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <!-- 預覽簡介標籤 (SEO & 基本 Meta) -->
+    <meta name="description" content="🇯🇵 6/6-6/12 7天6夜 日本北海道自駕之旅詳細行程規劃！包含登別溫泉、小樽運河、富良野四季彩之丘、美瑛青池、札幌海鮮與必買伴手禮全攻略。">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="🇯🇵 7天6夜 日本北海道自駕夢幻之旅 (6/6 - 6/12)">
+    <meta property="og:description" content="7天6夜北海道溫泉、美食與美景自駕漫遊！完整行程、駕車提示與景點地圖連結。">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=1200&q=80">
+
+    <style>
+        :root {
+            --primary: #1b4965; 
+            --secondary: #62b6cb; 
+            --accent: #e63946; 
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b; 
+            --text-muted: #475569; 
+            --card-shadow: 0 10px 25px rgba(27, 73, 101, 0.08);
+            --notice-bg: #f0f9ff;
+            --notice-border: #bae6fd;
+            --drive-bg: #f0fdf4;
+            --drive-border: #86efac;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.7; 
+            padding-bottom: 80px;
+            font-size: 17px; 
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f2b46, #1b4965, #62b6cb);
+            color: white;
+            padding: 55px 24px;
+            text-align: center;
+            border-bottom-left-radius: 32px;
+            border-bottom-right-radius: 32px;
+            box-shadow: 0 6px 25px rgba(15, 43, 70, 0.2);
+        }
+
+        header h1 {
+            font-size: 2.1rem; 
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: 1.5px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.15);
+        }
+
+        header p {
+            font-size: 1.1rem; 
+            opacity: 0.95;
+            letter-spacing: 0.8px;
+        }
+
+        .container {
+            max-width: 680px; 
+            margin: 0 auto;
+            padding: 24px 16px;
+        }
+
+        .flight-info-banner {
+            background: #fff;
+            border: 2px solid #62b6cb;
+            border-radius: 16px;
+            padding: 16px 20px;
+            margin-bottom: 24px;
+            box-shadow: var(--card-shadow);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .flight-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+
+        .flight-badge {
+            background: var(--primary);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        .hokkaido-time-box {
+            background: #f0f9ff;
+            border: 2px solid #7dd3fc;
+            border-left: 6px solid #0284c7;
+            border-radius: 16px;
+            padding: 16px 20px;
+            margin-bottom: 30px;
+            box-shadow: var(--card-shadow);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .hokkaido-time-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hokkaido-time-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #0369a1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hokkaido-time-display {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #0c4a6e;
+            background: #e0f2fe;
+            padding: 6px 14px;
+            border-radius: 20px;
+        }
+
+        .weather-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            padding: 10px 16px;
+            border-radius: 12px;
+            border: 1px solid #bae6fd;
+            font-size: 0.95rem;
+            color: #0369a1;
+        }
+
+        .weather-detail {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+        }
+
+        .notice-box {
+            background-color: var(--notice-bg);
+            border: 2px solid var(--notice-border);
+            border-left: 6px solid var(--primary);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .notice-title {
+            font-size: 1.25rem; 
+            font-weight: 800;
+            color: #0c4a6e;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .notice-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .notice-list li {
+            font-size: 1.05rem; 
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 22px;
+            color: #374151;
+        }
+
+        .notice-list li::before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.3rem;
+            position: absolute;
+            left: 4px;
+            top: -2px;
+        }
+
+        .day-tabs {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding: 8px 4px 20px 4px;
+            margin-bottom: 15px;
+            scrollbar-width: none;
+        }
+
+        .day-tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .tab-btn {
+            flex: 0 0 auto;
+            background: white;
+            border: 1px solid #e2e8f0;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-size: 1rem; 
+            font-weight: 700;
+            color: #475569;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 6px 20px rgba(27, 73, 101, 0.3);
+        }
+
+        .itinerary-panel {
+            display: none;
+        }
+
+        .itinerary-panel.active {
+            display: block;
+            animation: fadeIn 0.35s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 28px;
+            margin-top: 15px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 12px;
+            bottom: 12px;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--secondary), var(--primary));
+            border-radius: 4px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -28px;
+            top: 8px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: white;
+            border: 4px solid var(--primary);
+            transition: all 0.25s ease;
+            box-sizing: border-box;
+            z-index: 2;
+        }
+
+        .timeline-item:focus-within::before,
+        .timeline-item:hover::before {
+            border-color: var(--accent);
+            background: var(--accent);
+            transform: scale(1.2);
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid #f1f5f9;
+        }
+
+        .card-time {
+            font-size: 0.95rem; 
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .card-title {
+            font-size: 1.25rem; 
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .card-desc {
+            font-size: 1.05rem; 
+            color: var(--text-muted);
+            white-space: pre-line;
+        }
+
+        .card-meta-info {
+            background: #f1f5f9;
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-top: 14px;
+            font-size: 0.95rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .meta-line {
+            margin-bottom: 6px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .meta-line:last-child {
+            margin-bottom: 0;
+        }
+
+        .meta-label {
+            font-weight: 800;
+            color: #475569;
+            min-width: 90px;
+            flex-shrink: 0;
+        }
+
+        .meta-value {
+            color: #1e293b;
+        }
+
+        .map-links {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .map-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .map-google {
+            background: #e8f0fe;
+            color: #1a73e8;
+        }
+
+        .map-google:hover {
+            background: #d2e3fc;
+        }
+
+        .guide-box {
+            margin-top: 12px;
+            padding: 14px;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .guide-must-buy {
+            background: #fffbeb;
+            border: 1px dashed #fcd34d;
+            color: #78350f;
+        }
+
+        .guide-must-eat {
+            background: #f0fdf4;
+            border: 1px dashed #86efac;
+            color: #166534;
+        }
+
+        .guide-photo {
+            background: #f0f9ff;
+            border: 1px dashed #7dd3fc;
+            color: #0369a1;
+        }
+
+        .guide-drive {
+            background: var(--drive-bg);
+            border: 1px solid var(--drive-border);
+            color: #14532d;
+        }
+
+        .guide-title {
+            font-weight: 800;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .transit-item::before {
+            border-color: #cbd5e1;
+            background: #cbd5e1;
+            width: 11px;
+            height: 11px;
+            left: -26px;
+            top: 14px;
+        }
+        
+        .transit-card {
+            background: #f8fafc;
+            border: 2px dashed #cbd5e1;
+            padding: 12px 16px;
+            border-radius: 14px;
+            box-shadow: none;
+        }
+
+        .transit-route {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 800;
+            font-size: 1.05rem;
+            color: #475569;
+        }
+
+        .transit-detail {
+            font-size: 0.95rem;
+            color: #64748b;
+            margin-top: 4px;
+        }
+
+        .hotel-card {
+            background: linear-gradient(135deg, #fffdfa, #ffffff);
+            border-left: 6px solid var(--accent);
+            border-top: 1px solid #fef3c7;
+            margin-top: 35px;
+        }
+
+        .supper-box {
+            background: #faf5ff;
+            border: 1px solid #e9d5ff;
+            border-left: 5px solid #a855f7;
+            padding: 16px;
+            border-radius: 14px;
+            font-size: 1rem; 
+            margin-top: 14px;
+            color: #581c87;
+            line-height: 1.6;
+        }
+
+        .supper-title {
+            font-weight: 800;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #7e22ce;
+            font-size: 1.1rem;
+        }
+
+        /* Option A/B Choice Box Styling */
+        .option-container {
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option-header-title {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 6px;
+        }
+
+        .option-card {
+            border-radius: 14px;
+            padding: 14px 16px;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+
+        .option-card-a {
+            background: #f0f9ff;
+            border: 1.5px solid #7dd3fc;
+        }
+
+        .option-card-b {
+            background: #fff7ed;
+            border: 1.5px solid #fdba74;
+        }
+
+        .option-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .badge-a {
+            background: #0284c7;
+            color: white;
+        }
+
+        .badge-b {
+            background: #ea580c;
+            color: white;
+        }
+
+        .option-title {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 4px;
+        }
+
+        .option-desc {
+            font-size: 0.95rem;
+            color: #475569;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🇯🇵 7天6夜 北海道夏季自駕夢幻之旅</h1>
+        <p>6/6 (五) ~ 6/12 (四) | 登別・小樽・富良野美瑛・札幌深度自駕</p>
+    </header>
+
+    <div class="container">
+
+        <!-- 航班概覽卡片 -->
+        <div class="flight-info-banner">
+            <div class="flight-row">
+                <span class="flight-badge">去程 6/6 (五)</span>
+                <span><strong>06:20</strong> 桃園 (TPE) ➔ <strong>11:00</strong> 新千歲 (CTS)</span>
+            </div>
+            <div class="flight-row">
+                <span class="flight-badge" style="background:#e63946;">回程 6/12 (四)</span>
+                <span><strong>15:20</strong> 新千歲 (CTS) ➔ <strong>18:30</strong> 桃園 (TPE)</span>
+            </div>
+        </div>
+        
+        <!-- 北海道日本即時時間與天氣 -->
+        <div class="hokkaido-time-box">
+            <div class="hokkaido-time-row">
+                <div class="hokkaido-time-title">📍 北海道札幌時間 (JST)</div>
+                <div class="hokkaido-time-display" id="jpClock">載入中...</div>
+            </div>
+            <div class="weather-info">
+                <span>🌤️ 札幌初夏平均氣溫</span>
+                <div class="weather-detail" id="jpWeather">14°C - 22°C (舒適宜人)</div>
+            </div>
+        </div>
+        
+        <div class="day-tabs">
+            <button class="tab-btn" onclick="switchDay(0)">🚗 自駕與行前須知</button>
+            <button class="tab-btn active" onclick="switchDay(1)">D1 (6/6)</button>
+            <button class="tab-btn" onclick="switchDay(2)">D2 (6/7)</button>
+            <button class="tab-btn" onclick="switchDay(3)">D3 (6/8)</button>
+            <button class="tab-btn" onclick="switchDay(4)">D4 (6/9)</button>
+            <button class="tab-btn" onclick="switchDay(5)">D5 (6/10)</button>
+            <button class="tab-btn" onclick="switchDay(6)">D6 (6/11)</button>
+            <button class="tab-btn" onclick="switchDay(7)">D7 (6/12)</button>
+        </div>
+
+        <!-- 規範與行前指南 (Day 0) -->
+        <div id="day0" class="itinerary-panel">
+            <div class="notice-box">
+                <div class="notice-title">🚗 日本自駕駕照與駕駛必備清單</div>
+                <ul class="notice-list">
+                    <li><strong>自駕必帶三大件：</strong>台灣駕照正本 + 駕照日文譯本（監理所辦理）+ 護照。兩者缺一不可！</li>
+                    <li><strong>HEP (Hokkaido Expressway Pass)：</strong>取車時務必加購 HEP 高速公路 Pass，可吃到飽無限次通過 ETC 通道，大幅節省高速公路通行費。</li>
+                    <li><strong>右駕靠左行駛：</strong>右轉為大轉彎、左轉為小轉彎。方向燈與雨刷位置與台灣相反，出發前先熟悉打燈位置。</li>
+                    <li><strong>行人絕對優先：</strong>日本路口轉彎時，無論有無紅綠燈，均需停止禮讓行人優先通過。</li>
+                    <li><strong>導航輸入 MapCode / 電話：</strong>車載導航或 Google Maps 可以輸入目的地的 MapCode 或電話號碼快速尋找景點與停車場。</li>
+                </ul>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="card">
+                        <div class="card-time">行前準備 01</div>
+                        <div class="card-title">📱 Visit Japan Web 快速通關</div>
+                        <div class="card-desc">預先登錄 Visit Japan Web 完成「入境審查」與「海關申報」，出示 QR Code 可加速通關，利於及早前往租車櫃檯取車。</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="card">
+                        <div class="card-time">行前準備 02</div>
+                        <div class="card-title">🅿️ 停車與飯店停車場確認</div>
+                        <div class="card-desc">• 札幌與小樽市區飯店多數需另付停車費（約 ¥1,000 - ¥2,000 / 晚）。
+                        • 景點停車請認明收費標誌，嚴禁路邊臨時違規停車。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DAY 1: 6/6 (五) -->
+        <div id="day1" class="itinerary-panel active">
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="card">
+                        <div class="card-time">AM 06:20 - 11:00</div>
+                        <div class="card-title">🛫 桃園機場 (06:20) → 新千歲機場 (11:00)</div>
+                        <div class="card-desc">搭乘清晨航班飛往北海道新千歲機場，降落後迅速進行入境審查與領取行李。</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item transit-item">
+                    <div class="card transit-card">
+                        <div class="transit-route">🚙 租車辦理 & 熟悉右駕</div>
+                        <div class="transit-detail">機場接駁車 → 租車營業所 (TOYOTA / Nippon / ORIX) 辦理手續、租借 ETC / HEP | ⏱️ 約 1 小時</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="card">
+                        <div class="card-time">PM 12:30 - 13:30</div>
+                        <div class="card-title">🍜 午餐擇一選項</div>
+                        <div class="option-container">
+                            <div class="option-card option-card-a">
+                                <span class="option-badge badge-a">方案 A：千歲拉麵 / 鶴丸海鮮丼</span>
+                                <div class="option-desc">取車後直接在千歲市區快速用餐，順路補給必備物品，直接前往登別。</div>
+                                <div class="map-links">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Ramen+Chitose+Hokkaido" target="_blank" class="map-btn map-google">🌐 Google Maps</a>
+                                </div>
+                            </div>
+                            <div class="option-card option-card-b">
+                                <span class="option-badge badge-b">方案 B：苫小牧漁港「海鮮丼三浦屋」/ 鮮魚食堂</span>
+                                <div class="option-desc">順路稍微繞至苫小牧漁港，品嚐全北海道最知名的超澎湃新鮮北寄貝與海鮮丼！</div>
+                                <div class="map-links">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Seafood+Don+Miuraya+Tomakomai" target="_blank" class="map-btn map-google">🌐 Google Maps</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item transit-item">
+                    <div class="card transit-card">
+                        <div class="transit-route">🚗 自駕國道：千歲/苫小牧 → 登別溫泉</div>
+                        <div class="transit-detail">走道央自動車道 (E5) | 距離約 70 km | ⏱️ 車程約 1 小時</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="card">
+                        <div class="card-time">PM 15:00 - 17:30</div>
+                        <div class="card-title">♨️ 登別下午行程擇一</div>
+                        <div class="option-container">
+                            <div class="option-card option-card-a">
+                                <span class="option-badge badge-a">方案 A：地獄谷 & 大湯沼天然足湯漫步 (經典自然)</span>
+                                <div class="option-desc">造訪火山地熱景觀地獄谷，欣賞壯觀白煙，並沿森林木棧道前往大湯沼享受免費天然足湯。</div>
+                                <div class="map-links">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Jigokudani+Noboribetsu" target="_blank" class="map-btn map-google">🌐 Google Maps</a>
+                                </div>
+                            </div>
+                            <div class="option-card option-card-b">
+                                <span class="option-badge badge-b">方案 B：登別伊達時代村 (日式文化體驗)</span>
+                                <div class="option-desc">重現江戶時代街景的歷史主題樂園，觀賞精彩忍者秀、花魁表演與穿著和服體驗。</div>
+                                <div class="map-links">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Noboribetsu+Date+Jidaimura" target="_blank" class="map-btn map-google">🌐 Google Maps</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-meta-info">
+                            <div class="meta-line"><span class="meta-label">MapCode：</span><span class="meta-value">603 287 026*55 (地獄谷)</span></div>
+                            <div class="meta-line"><span class="meta-label">停車資訊：</span><span class="meta-value">地獄谷收費停車場 (約 ¥500)</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item transit-item">
+                    <div class="card transit-card">
+                        <div class="transit-route">🚗 自駕國道：千歲/苫小牧 → 登別溫泉</div>
+                        <div class="transit-detail">走道央自動車道 (E5) | 距離約 70 km | ⏱️ 車程約 1 小時</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="card">
+                        <div class="card-time">PM 15:00 - 17:30</div>
+                        <div class="card-title">♨️ 登別下午行程擇一</div>
+                        <div class="option-container">
+                            <div class="option-card option-card-a">
+                                <span class="option-badge badge-a">方案 A：地獄谷 & 大湯沼天然足湯漫步 (經典自然)</span>
+                                <div class="option-desc">造訪火山地熱景觀地獄谷，欣賞壯觀白煙，並沿森林木棧道前往大湯沼享受免費天然足湯。</div>
+                            </div>
+                            <div class="option-card option-card-b">
+                                <span class="option-badge badge-b">方案 B：登別伊達時代村 (日式文化體驗)</span>
+                                <div class="option-desc">重現江戶時代街景的歷史主題樂園，觀賞精彩忍者秀、花魁表演與穿著和服體驗。</div>
+                            </div>
+                        </div>
+                        <div class="card-meta-info">
+                            <div class="meta-line"><span class="meta-label">MapCode：</span><span class="meta-value">603 287 026*55 (地獄谷)</span></div>
+                            <div class="meta-line"><span class="meta-label">停車資訊：</span><span class="meta-value">地獄谷收費停車場 (約 ¥500)</span></div>
+                            <div class="map-links">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Jigokudani+Noboribetsu" target="_blank" class="map-btn map-google">🌐 Google Maps</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="card">
+                        <div class="card-time">PM 18:30 - 20:30</div>
+                        <div class="card-title">🍱 晚餐：溫泉飯店豪華會席料理</div>
+                        <div class="card-desc">入住登別溫泉飯店，享用北海道海鮮與在地和牛會席，隨後體驗日本著名的「第一名湯」。</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card hotel-card">
+                <div class="card-time">🏨 今日下榻</div>
+                <div class="card-title">登別第一瀧本館 / 登別萬世閣 (含停車位)</div>
+            </div>
+        </div>
+
+        <!-- DAY 2: 6/7 (六) -->
+        <div id="day2" class="itinerary-panel">
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="card">
+                        <div class="card-time">AM 09:00 - 11:30</div>
+                        <div class="card-title">🐻 上午景點擇一</div>
+                        <div class="option-container">
+                            <div class="option-card option-card-a">
+                                <span class="option-badge badge-a">方案 A：登別熊牧場 (纜車+棕熊)</span>
+                                <div class="option-desc">搭乘纜車前往山頂熊牧場，觀賞北海道蝦夷棕熊，於人熊觀察艙近距離餵食體驗。</div>
+                                <div class="map-links">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Noboribetsu+Bear+Park" target="_blank" class="map-btn map-google">🌐 Google Maps</a>
+                                </div>
+                            </div>
+                            <div class="option-card option-card-b">
+                                <span class="option-badge badge-b">方案 B：俱多樂湖 & 地獄谷晨間巡禮 (秘境湖景)</span>
+                                <div class="option-desc">前往日本水質極佳的圓形火山湖「俱多樂湖」扇形展望台，享受清晨靜謐的湖光山色。</div>
+                                <div class="map-links">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Lake+Kuttara+Observation+Deck" target="_blank" class="map-btn map-google">🌐 Google Maps</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-meta-info">
+                            <div class="meta-line"><span class="meta-label">MapCode：</span><span class="meta-value">603 288 425*22 (熊牧場)</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item transit-item">
+                    <div class="card transit-card">
+                        <div class="transit-route">🚗 自駕路線：登別 → 小樽</div>
+                        <div class="transit-detail">走道央自動車道 ➔ 札樽自動車道 | 距離約 115 km | ⏱️ 車程約 1.5 - 2 小時</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="card">
+                        <div class="card-time">PM 13:00 - 14:30</div>
+                        <div class="card-title">🍣 午餐擇一</div>
+                        <div class="option-container">
+                            <div class="option-card option-card-a">
+                                <span class="option-badge badge-a">方案 A：三角市場海鮮丼 (滝波食堂 / 武田鮮魚店)</span>
+                                <div class="option-desc">品嚐爆滿的帝王蟹、生海膽與鮭魚卵海鮮丼，感受活潑熱鬧的市場氣氛。</div>
+                                <div class="map-links">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Sankaku+Market+Otaru" target="_blank" class="map-btn map-google">🌐 Google Maps</a>
+                                </div>
+                            </div>
+                            <div class="option-card option-card-b">
+                                <span class="option-badge badge-b">方案 B：老字號壽司街 (政寿司 / 伊勢寿司)</span>
+                                <div class="option-desc">享受小樽最頂級的握壽司工藝，體驗日本板前手作握壽司的精緻風味。</div>
+                                <div class="map-links">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Otaru+Sushikouji" target="_blank" class="map-btn map-google">🌐 Google Maps</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="guide-box guide-drive">
+                            <div class="guide-title">🅿️ 小樽停車建議</div>
+                            <div>• 三角市場旁有市營停車場，小樽運河週邊亦有眾多 Times / Repark 計時停車場。</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="card">
+                        <div class="card-time">PM 15:00 - 18:30</div>
+                        <div class="card-title">🚣 下午小樽漫步擇一風格</div>
+                        <div class="option-container">
+                            <div class="option-card option-card-a">
+                                <span class="option-badge badge-a">方案 A：童話十字路口 & 甜點巡禮</span>
+                                <div class="option-desc">漫步音樂盒堂、北一硝子館，品嚐 LeTAO 雙層起司蛋糕、六花亭與北菓樓大口吸泡芙。</div>
+                                <div class="map-links">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Otaru+Music+Box+Museum" target="_blank" class="map-btn map-google">🌐 Google Maps</a>
+                                </div>
+                            </div>
+                            <div class="option-card option-card-b">
+                                <span class="option-badge badge-b">方案 B：小樽運河遊覽船 + 天狗山纜車夜景</span>
+                                <div class="option-desc">乘船遊覽運河，傍晚搭乘天狗山纜車登上山頂，欣賞北海道三大夜景之一的小樽港夜景。</div>
+                                <div class="map-links">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Otaru+Canal" target="_blank" class="map-btn map-google">🌐 小樽運河</a>
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Mt.+Tengu+Ropeway+Otaru" target="_blank" class="map-btn map-google">🌐 天狗山纜車</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-meta-info">
+                            <div class="meta-line"><span class="meta-label">MapCode：</span><span class="meta-value">493 690 411*25 (小樽運河)</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card hotel-card">
+                <div class="card-time">🏨 今日下榻</div>
+                <div class="card-title">小樽君樂酒店 (Grand Park Otaru) / 小樽運河前飯店</div>
+            </div>
+        </div>
+
+        <!-- DAY 3: 6/8 (日) -->
+        <div id="day3" class="itinerary-panel">
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="card">
+                        <div class="card-time">AM 08:00 - 10:30</div>
+                        <div class="card-title">🚗 上午自駕路線擇一</div>
+                        <div class="option-container">
+                            <div class="option-card option-card-a">
+                                <span class="option-badge badge-a">方案 A：拼布之路 (Ken & Mary / 七星之樹)</span>
+                                <div class="option-desc">行經經典的美瑛丘陵，欣賞廣告樹木景觀與平緩起伏的田園繪畫美景。</div>
+                                <div class="map-links">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Ken+and+Mary+Tree+Biei" target="_blank" class="map-btn map-google">🌐 Google Maps</a>
+                                </div>
+                            </div>
+                            <div class="option-card option-card-b">
+                                <span class="option-badge badge-b">方案 B：超廣角之路 (新榮之丘 / 三愛之丘)</span>
+                                <div class="option-desc">眺望廣袤的十勝岳連峰視野，車流量較少，適合輕鬆駕車拍照。</div>
+                                <div class="map-links">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Shinsei+no+Oka+Park+Biei" target="_blank" class="map-btn map-google">🌐 Google Maps</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-meta-info">
+                            <div class="meta-line"><span class="meta-label">MapCode：</span><span class="meta-value">389 071 027*33 (Ken & Mary 之樹)</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="card">
+                        <div class="card-time">AM 11:00 - 12:30</div>
+                        <div class="card-title">🌊 美瑛白金青池 & 白鬚瀑布</div>
+                        <div class="card-desc">6 月盛夏之初，湛藍池水與枯木倒影極為迷人，步行前往不遠處的白鬚瀑布欣賞清冽溪谷。</div>
+                        <div class="card-meta-info">
+                            <div class="meta-line"><span class="meta-label">MapCode：</span><span class="meta-value">349 568 888*00</span></div>
+                            <div class="map-links">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Shirogane+Blue+Pond+Biei" target="_blank" class="map-btn map-google">🌐 青池 Maps</a>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Shirahige+Waterfall" target="_blank" class="map-btn map-google">🌐 白鬚瀑布 Maps</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="card">
+                        <div class="card-time">PM 13:00 - 16:30</div>
+                        <div class="card-title">🌸 花田景點二選一</div>
+                        <div class="option-container">
+                            <div class="option-card option-card-a">
+                                <span class="option-badge badge-a">方案 A：富田農場 (Farm Tomita)</span>
+                                <div class="option-desc">北海道最經典花園，欣賞初夏早花與溫室薰衣草，品嚐濃郁薰衣草霜淇淋與哈密瓜。</div>
+                                <div class="map-links">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Farm+Tomita+Furano" target="_blank" class="map-btn map-google">🌐 Google Maps</a>
+                                </div>
+                            </div>
+                            <div class="option-card option-card-b">
+                                <span class="option-badge badge-b">方案 B：四季彩之丘 (Shikisai no Oka)</span>
+                                <div class="option-desc">廣達 15 公頃的彩虹花田，可乘坐拖拉機遊覽車或租用高爾夫球車暢遊花海。</div>
+                                <div class="map-links">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Shikisai+no+Oka+Biei" target="_blank" class="map-btn map-google">🌐 Google Maps</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card hotel-card">
+                <div class="card-time">🏨 今日下榻</div>
+                <div class="card-title">富良野王子大飯店 / 旭川 JR Inn (方便明日行程)</div>
+            </div>
+        </div>
+
+        <!-- DAY 4: 6/9 (一) -->
+        <div id="day4" class="itinerary-panel">
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="card">
+                        <div class="card-time">AM 09:30 - 12:00</div>
+                        <div class="card-title">🐧 上午旭川行程擇一</div>
+                        <div class="option-container">
+                            <div class="option-card option-card-a">
+                                <span class="option-badge badge-a">方案 A：旭山動物園 (人氣動物動態展示)</span>
+                                <div class="option-desc">透過圓筒水槽觀賞海豹穿梭，以及北極熊巨大的水下姿態，親子與大眾首選。</div>
+                                <div class="map-links">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Asahiyama+Zoo+Asahikawa" target="_blank" class="map-btn map-google">🌐 Google Maps</a>
+                                </div>
+                            </div>
+                            <div class="option-card option-card-b">
+                                <span class="option-badge badge-b">方案 B：大雪山旭岳纜車 (高山自然景觀)</span>
+                                <div class="option-desc">搭乘纜車前往北海道最高峰旭岳姿見之池，感受壯麗的殘雪與高原高山植物美景。</div>
+                                <div class="map-links">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Asahidake+Ropeway" target="_blank" class="map-btn map-google">🌐 Google Maps</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-meta-info">
+                            <div class="meta-line"><span class="meta-label">MapCode：</span><span class="meta-value">79 357 849*22 (旭山動物園)</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="card">
+                        <div class="card-time">PM 12:30 - 13:40</div>
+                        <div class="card-title">🍜 午餐：旭川拉麵 village / 蜂屋拉麵</div>
+                        <div class="card-desc">品嚐知名「旭川醬油拉麵」，濃郁豚骨搭配醬油湯頭與層次豐厚的油脂，非常順口。</div>
+                        <div class="map-links">
+                            <a href="https://www.google.com/maps/search/?api=1&query=Asahikawa+Ramen+Village" target="_blank" class="map-btn map-google">🌐 Google Maps</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item transit-item">
+                    <div class="card transit-card">
+                        <div class="transit-route">🚗 自駕國道：旭川 → 札幌市區</div>
+                        <div class="transit-detail">走道央自動車道 (E5) | 距離約 140 km | ⏱️ 車程約 1 小時 50 分</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="card">
+                        <div class="card-time">PM 18:00 - 20:30</div>
+                        <div class="card-title">🥩 晚餐二選一</div>
+                        <div class="option-container">
+                            <div class="option-card option-card-a">
+                                <span class="option-badge badge-a">方案 A：成吉思汗烤羊肉 達摩 (Daruma)</span>
+                                <div class="option-desc">薄野超人氣老字號，特製鑄鐵鍋燒烤無腥味鮮嫩羊肉配大蔥。</div>
+                                <div class="map-links">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Daruma+Jingisukan+Sapporo" target="_blank" class="map-btn map-google">🌐 Google Maps</a>
+                                </div>
+                            </div>
+                            <div class="option-card option-card-b">
+                                <span class="option-badge badge-b">方案 B：奧芝商店 / Suage+ 湯咖哩</span>
+                                <div class="option-desc">以濃郁蝦湯或藥膳香料為底的道地札幌湯咖哩，搭配酥脆大雞腿與豐富在地野菜。</div>
+                                <div class="map-links">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Suage%2B+Soup+Curry+Sapporo" target="_blank" class="map-btn map-google">🌐 Google Maps</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card hotel-card">
+                <div class="card-time">🏨 今日下榻</div>
+                <div class="card-title">札幌站前 Richmond Hotel / 札幌大通京王普雷利亞飯店</div>
+            </div>
+        </div>
+
+        <!-- DAY 5: 6/10 (二) -->
+        <div id="day5" class="itinerary-panel">
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="card">
+                        <div class="card-time">AM 08:30 - 10:30</div>
+                        <div class="card-title">🦀 早餐擇一</div>
+                        <div class="option-container">
+                            <div class="option-card option-card-a">
+                                <span class="option-badge badge-a">方案 A：二条市場 (丼兵衛 / 大磯)</span>
+                                <div class="option-desc">市中心便利首選，品嚐現剖海膽、生烤帝王蟹腳與澎湃豪華海鮮丼。</div>
+                                <div class="map-links">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Nijo+Market+Sapporo" target="_blank" class="map-btn map-google">🌐 Google Maps</a>
+                                </div>
+                            </div>
+                            <div class="option-card option-card-b">
+                                <span class="option-badge badge-b">方案 B：札幌場外市場 (北のグルメ亭)</span>
+                                <div class="option-desc">規模較大，附設免費專用停車場，海鮮選擇極多且可直接買伴手禮快遞。</div>
+                                <div class="map-links">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Sapporo+Jogai+Market" target="_blank" class="map-btn map-google">🌐 Google Maps</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="card">
+                        <div class="card-time">AM 11:00 - 13:30</div>
+                        <div class="card-title">🍪 白色戀人公園 (Shiroi Koibito Park)</div>
+                        <div class="card-desc">駕車前往歐風城堡園區，欣賞綠意盎然的英式花園與生產線展覽，品嚐限定白色戀人霜淇淋。</div>
+                        <div class="map-links">
+                            <a href="https://www.google.com/maps/search/?api=1&query=Shiroi+Koibito+Park+Sapporo" target="_blank" class="map-btn map-google">🌐 Google Maps</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="card">
+                        <div class="card-time">PM 14:30 - 17:30</div>
+                        <div class="card-title">🏛️ 下午景點擇一</div>
+                        <div class="option-container">
+                            <div class="option-card option-card-a">
+                                <span class="option-badge badge-a">方案 A：北海道神宮 & 六花亭神宮茶屋</span>
+                                <div class="option-desc">參拜北海道總鎮守，品嚐神宮茶屋限定現場煎烤的「判官餅」糯米糕。</div>
+                                <div class="map-links">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Hokkaido+Shrine" target="_blank" class="map-btn map-google">🌐 Google Maps</a>
+                                </div>
+                            </div>
+                            <div class="option-card option-card-b">
+                                <span class="option-badge badge-b">方案 B：莫埃來沼公園 (Moerenuma Park)</span>
+                                <div class="option-desc">由著名雕塑家野口勇設計，融合幾何美學與大自然的巨型藝術公園，適合租自行車漫遊。</div>
+                                <div class="map-links">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Moerenuma+Park+Sapporo" target="_blank" class="map-btn map-google">🌐 Google Maps</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="card">
+                        <div class="card-time">PM 18:30 - 20:30</div>
+                        <div class="card-title">🍲 晚餐：札幌必吃名物</div>
+                        <div class="card-desc">品嚐札幌獨有靈魂美食湯咖哩 (GARAKU / Suage+) 或道地味噌拉麵 (麵屋彩未 / 一雪)。</div>
+                        <div class="map-links">
+                            <a href="https://www.google.com/maps/search/?api=1&query=Soup+Curry+GARAKU+Sapporo" target="_blank" class="map-btn map-google">🌐 GARAKU Maps</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card hotel-card">
+                <div class="card-time">🏨 今日下榻</div>
+                <div class="card-title">札幌市中心飯店 (連住第二晚)</div>
+            </div>
+        </div>
+
+        <!-- DAY 6: 6/11 (三) -->
+        <div id="day6" class="itinerary-panel">
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="card">
+                        <div class="card-time">AM 10:00 - 15:00</div>
+                        <div class="card-title">🛍️ 白天購物行程擇一</div>
+                        <div class="option-container">
+                            <div class="option-card option-card-a">
+                                <span class="option-badge badge-a">方案 A：狸小路商店街 & MEGA 唐吉訶德</span>
+                                <div class="option-desc">採購藥妝、伴手禮零食、日本服飾，路邊眾多免稅店家一站購足。</div>
+                                <div class="map-links">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Tanukikoji+Shopping+Street+Sapporo" target="_blank" class="map-btn map-google">🌐 Google Maps</a>
+                                </div>
+                            </div>
+                            <div class="option-card option-card-b">
+                                <span class="option-badge badge-b">方案 B：三井 Outlet Park 札幌北 Hiroshima (自駕便利)</span>
+                                <div class="option-desc">全北海道最大 Outlets，開車約 30 分鐘，享有寬敞免費停車場，聚集各大國際品牌。</div>
+                                <div class="map-links">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Mitsui+Outlet+Park+Sapporo+Kitahiroshima" target="_blank" class="map-btn map-google">🌐 Google Maps</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="card">
+                        <div class="card-time">PM 15:30 - 18:00</div>
+                        <div class="card-title">🏙️ 夕陽夜景二選一</div>
+                        <div class="option-container">
+                            <div class="option-card option-card-a">
+                                <span class="option-badge badge-a">方案 A：JR Tower 38樓展望台</span>
+                                <div class="option-desc">直接位於 JR 札幌站上方，輕鬆俯瞰棋盤狀札幌市區與夜景。</div>
+                                <div class="map-links">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=JR+Tower+Observation+Deck+T38" target="_blank" class="map-btn map-google">🌐 Google Maps</a>
+                                </div>
+                            </div>
+                            <div class="option-card option-card-b">
+                                <span class="option-badge badge-b">方案 B：藻岩山纜車 (日本新三大夜景)</span>
+                                <div class="option-desc">搭乘纜車登上藻岩山山頂，享受 360 度無死角的璀璨札幌「銀河夜景」。</div>
+                                <div class="map-links">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Mt.+Moiwa+Ropeway+Sapporo" target="_blank" class="map-btn map-google">🌐 Google Maps</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="card">
+                        <div class="card-time">PM 18:30 - 21:00</div>
+                        <div class="card-title">🦀 豪華晚餐：三大蟹吃到飽 (難陀 / 蟹將軍)</div>
+                        <div class="card-desc">享受帝王蟹、松葉蟹與毛蟹吃到飽饗宴，搭配日式燒肉與頂級鮮甜海鮮，犒賞旅途疲勞。</div>
+                        <div class="map-links">
+                            <a href="https://www.google.com/maps/search/?api=1&query=Nanda+Buffet+Sapporo" target="_blank" class="map-btn map-google">🌐 Google Maps</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card hotel-card">
+                <div class="card-time">🏨 今日下榻</div>
+                <div class="card-title">札幌市中心飯店 (連住第三晚)</div>
+            </div>
+        </div>
+
+        <!-- DAY 7: 6/12 (四) -->
+        <div id="day7" class="itinerary-panel">
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="card">
+                        <div class="card-time">AM 09:00 - 10:30</div>
+                        <div class="card-title">🏨 退房 & 駕車前往新千歲機場租車處還車</div>
+                        <div class="card-desc">辦理退房，開車前往新千歲機場租車營業所。還車前務必於指定加油站將油箱加滿 (滿油還車)。</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="card">
+                        <div class="card-time">AM 11:00 - 13:00</div>
+                        <div class="card-title">🛍️ 新千歲機場活動擇一</div>
+                        <div class="option-container">
+                            <div class="option-card option-card-a">
+                                <span class="option-badge badge-a">方案 A：國內線美食商圈 & 伴手禮最後大採購</span>
+                                <div class="option-desc">享用北海道拉麵道場、市川生乳霜淇淋，並採購六花亭、北菓樓與保鮮袋包裝海鮮。</div>
+                                <div class="map-links">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=New+Chitose+Airport+Domestic+Terminal" target="_blank" class="map-btn map-google">🌐 Google Maps</a>
+                                </div>
+                            </div>
+                            <div class="option-card option-card-b">
+                                <span class="option-badge badge-b">方案 B：哆啦A夢 Wakuwaku Sky Park & Royce 巧克力工廠</span>
+                                <div class="option-desc">非常適合親子與拍照，參觀 Royce 巧克力生產線與哆啦A夢主題咖啡廳。</div>
+                                <div class="map-links">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Doraemon+Wakuwaku+Sky+Park+New+Chitose+Airport" target="_blank" class="map-btn map-google">🌐 Google Maps</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item transit-item">
+                    <div class="card transit-card">
+                        <div class="transit-route">🛫 辦理登機與返航班機</div>
+                        <div class="transit-detail">新千歲機場 (CTS) 15:20 起飛 ➔ 桃園國際機場 (TPE) 18:30 抵達 | ⏱️ 預計 13:20 前抵達櫃檯辦理報到</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="card">
+                        <div class="card-time">PM 18:30</div>
+                        <div class="card-title">🛬 抵達台灣桃園機場</div>
+                        <div class="card-desc">順利降落桃園國際機場，帶著滿滿北海道自駕戰利品與美好回憶返家。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function switchDay(dayIndex) {
+            const panels = document.querySelectorAll('.itinerary-panel');
+            const tabs = document.querySelectorAll('.tab-btn');
+            
+            panels.forEach(panel => panel.classList.remove('active'));
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            const targetPanel = document.getElementById(`day${dayIndex}`);
+            if (targetPanel) {
+                targetPanel.classList.add('active');
+            }
+            if (tabs[dayIndex]) {
+                tabs[dayIndex].classList.add('active');
+            }
+        }
+
+        function updateJPClock() {
+            const now = new Date();
+            const options = { 
+                timeZone: 'Asia/Tokyo', 
+                hour12: false, 
+                month: '2-digit', 
+                day: '2-digit', 
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit' 
+            };
+            const formatter = new Intl.DateTimeFormat('zh-TW', options);
+            const clockEl = document.getElementById('jpClock');
+            if (clockEl) {
+                clockEl.textContent = formatter.format(now);
+            }
+        }
+
+        setInterval(updateJPClock, 1000);
+        updateJPClock();
+    </script>
+</body>
+</html>
