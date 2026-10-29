@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Switch 固件升級與刷機教學指南</title>
+
+    <!-- Open Graph (OG) / Facebook 分享標籤 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Switch 固件升級與更新指南 (23.0.1|AMS1.12.1|E)">
+    <meta property="og:description" content="詳細的 Switch 固件與大氣層 (AMS) 升級圖文指南，請嚴格照著步驟操作確保順利更新。">
+    <meta property="og:image" content="https://raw.githubusercontent.com/jackyeh1982/Tan-Tan-travel-diary/refs/heads/main/Switch%E4%BA%94%E6%9C%88/switchboss.jpg">
+    <meta property="og:site_name" content="Switch 固件升級教學指南">
+
+    <!-- Twitter 卡片標籤 -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Switch 固件升級與更新指南">
+    <meta name="twitter:description" content="詳細的 Switch 固件與大氣層 (AMS) 升級圖文指南。">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/jackyeh1982/Tan-Tan-travel-diary/refs/heads/main/Switch%E4%BA%94%E6%9C%88/switchboss.jpg">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
@@ -72,7 +86,7 @@
     </div>
 
     <!-- 主頁 Hero Section -->
-    <section id="hero" class="relative pt-16 pb-12 flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 z-10 max-w-4xl mx-auto text-center">
+    <section id="hero" class="relative pt-16 pb-8 flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 z-10 max-w-4xl mx-auto text-center">
         
         <!-- 1. 頭像貼圖 (Avatar Image) -->
         <div class="relative group mb-6">
@@ -94,12 +108,53 @@
         <h1 class="text-3xl sm:text-5xl font-black tracking-tight mb-4 leading-tight">
             Switch <span class="gradient-text">固件升級與更新指南</span>
         </h1>
-        <p class="text-slate-400 text-sm sm:text-base max-w-xl mb-8">
+        <p class="text-slate-400 text-sm sm:text-base max-w-xl mb-6">
             請嚴格照著以下步驟操作，確保 Switch 固件順利更新至最新版本！
         </p>
 
+        <!-- 社群分享按鈕區塊 -->
+        <div class="flex flex-wrap items-center justify-center gap-3 mb-8">
+            <!-- LINE 分享按鈕 -->
+            <button onclick="shareToLine()" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#06C755] hover:bg-[#05b34c] text-white font-medium text-sm transition-all duration-300 shadow-lg hover:scale-105 active:scale-95">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.412-.105-.531-.284l-2.222-3.238v2.862c0 .346-.282.63-.628.63-.348 0-.63-.284-.63-.63V8.108c0-.27.174-.51.432-.596.066-.021.132-.032.2-.032.21 0 .411.106.529.284l2.224 3.237V8.108c0-.345.282-.63.628-.63.348 0 .63.285.63.63v4.771zm-5.741 0c0 .346-.282.63-.63.63-.346 0-.628-.284-.628-.63V8.108c0-.345.282-.63.628-.63.348 0 .63.285.63.63v4.771zm-2.466.63H4.917c-.347 0-.63-.284-.63-.63V8.108c0-.345.283-.63.63-.63.348 0 .628.285.628.63v4.141h1.758c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.616.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08-.085.643-.396 2.511-.43 3.048-.053.814.374 1.265 1.013.826 3.037-2.083 8.199-5.918 11.215-10.13C23.298 13.803 24 12.133 24 10.314"/>
+                </svg>
+                LINE 分享
+            </button>
+
+            <!-- Facebook 分享按鈕 -->
+            <button onclick="shareToFB()" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#1877F2] hover:bg-[#166fe5] text-white font-medium text-sm transition-all duration-300 shadow-lg hover:scale-105 active:scale-95">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+                FB 分享
+            </button>
+
+            <!-- Twitter/X 分享按鈕 -->
+            <button onclick="shareToTwitter()" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#000000] border border-white/20 hover:bg-zinc-900 text-white font-medium text-sm transition-all duration-300 shadow-lg hover:scale-105 active:scale-95">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+                X 分享
+            </button>
+
+            <!-- 複製連結按鈕 -->
+            <button onclick="copyCurrentUrl()" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 border border-slate-700 hover:bg-slate-700 text-slate-200 font-medium text-sm transition-all duration-300 shadow-lg hover:scale-105 active:scale-95">
+                <i data-lucide="link" class="w-4 h-4"></i>
+                複製連結
+            </button>
+        </div>
+
+        <!-- 複製成功的提示訊息框 (預設隱藏) -->
+        <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+            <div class="glass-card px-4 py-3 rounded-xl border border-neon-cyan/50 text-neon-cyan flex items-center gap-2 shadow-xl">
+                <i data-lucide="check-circle" class="w-5 h-5"></i>
+                <span id="toast-message" class="text-sm font-medium">連結已成功複製到剪貼簿！</span>
+            </div>
+        </div>
+
         <!-- 快速下載按鈕 (步驟1連結) -->
-        <a href=https://drive.google.com/uc?id=1du_AZM6GV8kjnZOwH4lekG4j6qDO9G2Y&export=download" 
+        <a href="https://drive.google.com/uc?id=1du_AZM6GV8kjnZOwH4lekG4j6qDO9G2Y&export=download" 
            target="_blank" rel="noopener noreferrer"
            class="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-pink text-white font-bold text-base shadow-lg hover:shadow-[0_0_30px_rgba(0,243,255,0.4)] hover:scale-105 active:scale-95 transition-all duration-300">
             <i data-lucide="download" class="w-5 h-5"></i>
@@ -131,7 +186,7 @@
                     <p class="text-slate-300 text-sm leading-relaxed mb-2">
                         將 Switch 關機，取出記憶卡插到電腦。
                     </p>
-                    <div class="p-3 bg-red-950/40 border border-red-500/30 rounded-xl text-xs text-red-200">
+                    <div class="p-3 bg-red-950/40 border border-red-500/30 rounded-xl text-xl text-red-200">
                         ⚠️ <strong>重要保留項目：</strong> 僅留下 <code class="bg-black/50 px-1.5 py-0.5 rounded text-neon-cyan">emummc</code> (一定要有)、<code class="bg-black/50 px-1.5 py-0.5 rounded text-slate-300">Nintendo</code> 與 <code class="bg-black/50 px-1.5 py-0.5 rounded text-slate-300">JKSV</code> (這兩個沒有沒關係) 這三個資料夾，<strong>其他檔案及資料夾全刪掉</strong>！
                     </div>
                 </div>
@@ -232,6 +287,57 @@
     <script>
         // 初始化 Lucide 圖標
         lucide.createIcons();
+
+        // LINE 分享功能
+        function shareToLine() {
+            const currentUrl = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent('Switch 固件升級與刷機教學指南：');
+            window.open(`https://social-plugins.line.me/lineit/share?url=${currentUrl}&text=${text}`, '_blank');
+        }
+
+        // Facebook 分享功能
+        function shareToFB() {
+            const currentUrl = encodeURIComponent(window.location.href);
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`, '_blank', 'width=600,height=400');
+        }
+
+        // Twitter/X 分享功能
+        function shareToTwitter() {
+            const currentUrl = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent('Switch 固件升級與刷機教學指南 (23.0.1|AMS1.12.1|E)');
+            window.open(`https://twitter.com/intent/tweet?url=${currentUrl}&text=${text}`, '_blank', 'width=600,height=400');
+        }
+
+        // 複製網址功能
+        function copyCurrentUrl() {
+            const textToCopy = window.location.href;
+            
+            // 使用相容性複製方法
+            const dummy = document.createElement('input');
+            document.body.appendChild(dummy);
+            dummy.value = textToCopy;
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
+
+            // 顯示 Toast 提示訊息
+            showToast("已成功複製連結！");
+        }
+
+        // 顯示提示彈窗 (Toast)
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            toastMsg.innerText = msg;
+            
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
     </script>
 </body>
 </html>
