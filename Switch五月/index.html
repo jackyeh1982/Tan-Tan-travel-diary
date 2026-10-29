@@ -97,7 +97,7 @@
             <div class="relative w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden p-1 bg-neon-dark border-2 border-white/20 animate-float">
                 <img 
                     src="https://raw.githubusercontent.com/jackyeh1982/Tan-Tan-travel-diary/refs/heads/main/Switch%E4%BA%94%E6%9C%88/switchboss.jpg" 
-                    alt="老闆頭像" 
+                    alt="五月" 
                     class="w-full h-full object-cover rounded-full transform transition-transform duration-500 group-hover:scale-110"
                     onerror="this.src='https://placehold.co/400x400/101020/00f3ff?text=BOSS'"
                 />
@@ -111,47 +111,6 @@
         <p class="text-slate-400 text-sm sm:text-base max-w-xl mb-6">
             請嚴格照著以下步驟操作，確保 Switch 固件順利更新至最新版本！
         </p>
-
-        <!-- 社群分享按鈕區塊 -->
-        <div class="flex flex-wrap items-center justify-center gap-3 mb-8">
-            <!-- LINE 分享按鈕 -->
-            <button onclick="shareToLine()" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#06C755] hover:bg-[#05b34c] text-white font-medium text-sm transition-all duration-300 shadow-lg hover:scale-105 active:scale-95">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                    <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.412-.105-.531-.284l-2.222-3.238v2.862c0 .346-.282.63-.628.63-.348 0-.63-.284-.63-.63V8.108c0-.27.174-.51.432-.596.066-.021.132-.032.2-.032.21 0 .411.106.529.284l2.224 3.237V8.108c0-.345.282-.63.628-.63.348 0 .63.285.63.63v4.771zm-5.741 0c0 .346-.282.63-.63.63-.346 0-.628-.284-.628-.63V8.108c0-.345.282-.63.628-.63.348 0 .63.285.63.63v4.771zm-2.466.63H4.917c-.347 0-.63-.284-.63-.63V8.108c0-.345.283-.63.63-.63.348 0 .628.285.628.63v4.141h1.758c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.616.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08-.085.643-.396 2.511-.43 3.048-.053.814.374 1.265 1.013.826 3.037-2.083 8.199-5.918 11.215-10.13C23.298 13.803 24 12.133 24 10.314"/>
-                </svg>
-                LINE 分享
-            </button>
-
-            <!-- Facebook 分享按鈕 -->
-            <button onclick="shareToFB()" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#1877F2] hover:bg-[#166fe5] text-white font-medium text-sm transition-all duration-300 shadow-lg hover:scale-105 active:scale-95">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                </svg>
-                FB 分享
-            </button>
-
-            <!-- Twitter/X 分享按鈕 -->
-            <button onclick="shareToTwitter()" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#000000] border border-white/20 hover:bg-zinc-900 text-white font-medium text-sm transition-all duration-300 shadow-lg hover:scale-105 active:scale-95">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                </svg>
-                X 分享
-            </button>
-
-            <!-- 複製連結按鈕 -->
-            <button onclick="copyCurrentUrl()" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 border border-slate-700 hover:bg-slate-700 text-slate-200 font-medium text-sm transition-all duration-300 shadow-lg hover:scale-105 active:scale-95">
-                <i data-lucide="link" class="w-4 h-4"></i>
-                複製連結
-            </button>
-        </div>
-
-        <!-- 複製成功的提示訊息框 (預設隱藏) -->
-        <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
-            <div class="glass-card px-4 py-3 rounded-xl border border-neon-cyan/50 text-neon-cyan flex items-center gap-2 shadow-xl">
-                <i data-lucide="check-circle" class="w-5 h-5"></i>
-                <span id="toast-message" class="text-sm font-medium">連結已成功複製到剪貼簿！</span>
-            </div>
-        </div>
 
         <!-- 快速下載按鈕 (步驟1連結) -->
         <a href="https://drive.google.com/uc?id=1du_AZM6GV8kjnZOwH4lekG4j6qDO9G2Y&export=download" 
