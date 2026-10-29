@@ -1,62 +1,40 @@
 <!DOCTYPE html>
-<html lang="zh-TW" class="scroll-smooth">
+<html lang="zh-TW" class="h-full bg-slate-950">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Switch 固件升級與刷機教學指南</title>
-
-    <!-- 防止搜尋引擎索引、抓取與建立快照 (SEO Block) -->
-    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
-    <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
-    <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet">
-
-    <!-- Open Graph (OG) / Facebook 分享標籤 -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Switch 固件升級與更新指南">
-    <meta property="og:description" content="詳細的 Switch 固件與大氣層 (AMS) 升級圖文指南。">
-    <meta property="og:image" content="https://raw.githubusercontent.com/jackyeh1982/Tan-Tan-travel-diary/refs/heads/main/Switch%E4%BA%94%E6%9C%88/switchboss.jpg">
-    <meta property="og:site_name" content="Switch 固件升級教學指南">
-
-    <!-- Twitter 卡片標籤 -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Switch 固件升級與更新指南">
-    <meta name="twitter:description" content="詳細的 Switch 固件與大氣層 (AMS) 升級圖文指南。">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/jackyeh1982/Tan-Tan-travel-diary/refs/heads/main/Switch%E4%BA%94%E6%9C%88/switchboss.jpg">
-
+    <title>系統跳轉中... | Portal Redirect</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;600;800;900&display=swap" rel="stylesheet">
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- FontAwesome 圖標 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Orbitron & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Noto Sans TC', 'sans-serif'],
+                        orbitron: ['Orbitron', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
                     },
                     colors: {
-                        neon: {
+                        cyber: {
                             cyan: '#00f3ff',
-                            purple: '#bc13fe',
-                            pink: '#ff007f',
-                            dark: '#0a0a12',
-                            card: '#121222'
+                            magenta: '#ff0055',
+                            purple: '#b026ff',
+                            dark: '#080811'
                         }
                     },
                     animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'spin-slow': 'spin 12s linear infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
                     },
                     keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-10px)' },
-                        },
-                        pulseGlow: {
-                            '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
-                            '50%': { opacity: '0.8', transform: 'scale(1.05)' },
+                        glow: {
+                            '0%': { filter: 'drop-shadow(0 0 5px rgba(0, 243, 255, 0.6))' },
+                            '100%': { filter: 'drop-shadow(0 0 20px rgba(0, 243, 255, 1))' }
                         }
                     }
                 }
@@ -64,281 +42,419 @@
         }
     </script>
     <style>
-        .gradient-text {
-            background: linear-gradient(135deg, #00f3ff 0%, #bc13fe 50%, #ff007f 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .glass-card {
-            background: rgba(18, 18, 34, 0.75);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+        /* 背景網格與粒子效果 */
+        .cyber-bg {
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(176, 38, 255, 0.15) 0%, transparent 60%),
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 40px 40px, 40px 40px;
         }
 
-        .glow-effect {
-            box-shadow: 0 0 50px -10px rgba(188, 19, 254, 0.3);
+        /* 環形進度條樣式 */
+        .circle-svg {
+            transform: rotate(-90deg);
+        }
+
+        .circle-bg {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.08);
+            stroke-width: 8;
+        }
+
+        .circle-progress {
+            fill: none;
+            stroke-width: 8;
+            stroke-linecap: round;
+            stroke: url(#cyan-purple-gradient);
+            transition: stroke-dashoffset 0.1s linear;
+        }
+
+        /* 玻璃擬態效果 */
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5),
+                        0 0 30px rgba(0, 243, 255, 0.1);
+        }
+
+        /* 霓虹邊框與文字特效 */
+        .neon-text-cyan {
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.7), 0 0 20px rgba(0, 243, 255, 0.4);
+        }
+        
+        .neon-text-magenta {
+            text-shadow: 0 0 10px rgba(255, 0, 85, 0.7), 0 0 20px rgba(255, 0, 85, 0.4);
+        }
+
+        /* Canvas 背景繪製 */
+        #particleCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
         }
     </style>
 </head>
-<body class="bg-neon-dark text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-neon-pink selection:text-white">
+<body class="h-full bg-slate-950 text-slate-100 flex items-center justify-center p-4 relative overflow-hidden font-sans cyber-bg">
 
-    <!-- 密碼驗證 Modal 視窗 -->
-    <div id="password-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-neon-dark/95 backdrop-blur-xl">
-        <div class="glass-card max-w-md w-full p-6 sm:p-8 rounded-3xl border border-neon-cyan/30 shadow-[0_0_50px_rgba(0,243,255,0.2)] text-center animate-float">
-            <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-tr from-neon-cyan to-neon-purple flex items-center justify-center text-white shadow-lg">
-                <i data-lucide="shield-check" class="w-8 h-8"></i>
-            </div>
-            
-            <h2 class="text-2xl font-black text-white mb-2">高級加密防護區域</h2>
-            <p class="text-slate-400 text-sm mb-6">本頁面內容已通過 AES-256 高級加密，請輸入密碼以進行金鑰解密。</p>
+    <!-- 背景動態粒子 Canvas -->
+    <canvas id="particleCanvas"></canvas>
 
-            <form id="password-form" onsubmit="decryptAndShow(event)" class="space-y-4">
-                <div class="relative">
-                    <input 
-                        type="password" 
-                        id="password-input" 
-                        placeholder="請輸入解密密碼..." 
-                        class="w-full px-4 py-3.5 rounded-xl bg-black/60 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan transition-all"
-                        required
-                        autofocus
-                    />
-                    <button 
-                        type="button" 
-                        onclick="togglePasswordVisibility()" 
-                        class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white p-1">
-                        <i data-lucide="eye" id="eye-icon" class="w-5 h-5"></i>
-                    </button>
-                </div>
+    <!-- 裝飾性光輝背景球體 -->
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyber-cyan/10 rounded-full filter blur-[120px] pointer-events-none animate-pulse-slow"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyber-purple/15 rounded-full filter blur-[120px] pointer-events-none animate-pulse-slow" style="animation-delay: 1.5s;"></div>
 
-                <!-- 解密錯誤提示 -->
-                <p id="error-msg" class="text-xs text-red-400 hidden flex items-center justify-center gap-1">
-                    <i data-lucide="alert-circle" class="w-4 h-4"></i>
-                    密碼錯誤，AES 金鑰解密失敗！
-                </p>
-
-                <button 
-                    type="submit" 
-                    id="decrypt-btn"
-                    class="w-full py-3.5 rounded-xl bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-pink text-white font-bold text-base shadow-lg hover:shadow-[0_0_20px_rgba(0,243,255,0.4)] hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center justify-center gap-2">
-                    <i data-lucide="key-round" class="w-5 h-5"></i>
-                    安全解密並開啟
-                </button>
-            </form>
+    <!-- 主要內容卡片 -->
+    <main class="relative z-10 w-full max-w-lg glass-panel rounded-3xl p-6 sm:p-10 text-center transition-all duration-300">
+        
+        <!-- 頂部狀態標籤 -->
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/60 mb-6 shadow-inner">
+            <span class="relative flex h-2.5 w-2.5">
+                <span id="statusPing" class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyber-cyan opacity-75"></span>
+                <span id="statusDot" class="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyber-cyan"></span>
+            </span>
+            <span id="statusText" class="text-xs font-semibold tracking-wider uppercase text-slate-300 font-orbitron">SYSTEM REDIRECTING</span>
         </div>
-    </div>
 
-    <!-- 解密後的內容容器 (初始為空，原始碼不含任何教學文字) -->
-    <div id="protected-content" class="hidden"></div>
+        <!-- 標題 -->
+        <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight mb-2 text-white font-orbitron">
+            正在傳送至目標頁面
+        </h1>
+        <p class="text-slate-400 text-sm mb-8">系統正在建立安全連線，請稍候...</p>
 
-    <!-- AES-256 高級解密引擎與動態 DOM 渲染腳本 -->
+        <!-- 倒數計時核心 (環形進度條) -->
+        <div class="relative w-48 h-48 mx-auto mb-8 flex items-center justify-center">
+            <!-- 外部旋轉裝飾環 -->
+            <div class="absolute inset-0 rounded-full border border-dashed border-cyber-cyan/30 animate-spin-slow"></div>
+            
+            <!-- SVG 環形進度圖 -->
+            <svg class="w-full h-full circle-svg" viewBox="0 0 100 100">
+                <defs>
+                    <linearGradient id="cyan-purple-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#00f3ff" />
+                        <stop offset="100%" stop-color="#b026ff" />
+                    </linearGradient>
+                </defs>
+                <circle class="circle-bg" cx="50" cy="50" r="42"></circle>
+                <circle id="circleProgress" class="circle-progress" cx="50" cy="50" r="42" stroke-dasharray="263.89" stroke-dashoffset="0"></circle>
+            </svg>
+
+            <!-- 中央數字與單位 -->
+            <div class="absolute flex flex-col items-center justify-center">
+                <span id="countdownNumber" class="text-5xl font-black font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-cyber-cyan to-white neon-text-cyan">
+                    5
+                </span>
+                <span class="text-xs text-slate-400 font-orbitron uppercase tracking-widest mt-1">Seconds</span>
+            </div>
+        </div>
+
+        <!-- 目標網址預覽卡片 -->
+        <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-4 mb-8 text-left relative overflow-hidden group">
+            <div class="text-xs text-slate-500 font-orbitron mb-1 flex justify-between items-center">
+                <span>DESTINATION URL</span>
+                <i class="fa-solid fa-lock text-emerald-400/80 text-[10px]"></i>
+            </div>
+            <div id="targetUrlText" class="text-sm font-mono text-cyber-cyan truncate pr-6 font-medium">
+                Switch 固件升級與刷機教學指南
+            </div>
+            <!-- 裝飾線條 -->
+            <div class="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-cyber-cyan via-cyber-purple to-transparent w-full opacity-50"></div>
+        </div>
+
+        <!-- 控制按鈕組 -->
+        <div class="flex flex-col sm:flex-row gap-3">
+            <!-- 立即跳轉按鈕 -->
+            <button id="redirectNowBtn" class="flex-1 py-3.5 px-6 rounded-xl font-orbitron font-bold text-sm text-slate-950 bg-gradient-to-r from-cyber-cyan to-teal-400 hover:brightness-110 active:scale-[0.98] transition-all shadow-lg shadow-cyber-cyan/25 flex items-center justify-center gap-2">
+                <span>立即前往</span>
+                <i class="fa-solid fa-bolt"></i>
+            </button>
+            
+            <!-- 暫停 / 繼續按鈕 -->
+            <button id="pauseBtn" class="py-3.5 px-5 rounded-xl font-orbitron font-semibold text-sm bg-slate-800/80 text-slate-300 border border-slate-700/80 hover:bg-slate-700/80 hover:text-white active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+                <i id="pauseIcon" class="fa-solid fa-pause"></i>
+                <span id="pauseText">暫停</span>
+            </button>
+        </div>
+
+        <!-- 自訂網址展開開關 -->
+        <button id="toggleConfigBtn" class="mt-6 text-xs text-slate-500 hover:text-slate-300 font-orbitron flex items-center justify-center gap-1.5 mx-auto transition-colors">
+            <i class="fa-solid fa-gear"></i>
+            <span>設定目標網址</span>
+        </button>
+
+        <!-- 自訂網址面板 (預設隱藏) -->
+        <div id="configPanel" class="hidden mt-4 pt-4 border-t border-slate-800 text-left transition-all">
+            <label for="customUrlInput" class="block text-xs font-orbitron text-slate-400 mb-2">修改網址 (按下 Enter 或點擊更新):</label>
+            <div class="flex gap-2">
+                <input type="url" id="customUrlInput" placeholder="https://example.com" class="flex-1 bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-xs font-mono text-slate-200 focus:outline-none focus:border-cyber-cyan transition-colors">
+                <button id="updateUrlBtn" class="px-3 py-2 bg-slate-800 hover:bg-slate-700 text-xs font-orbitron rounded-lg transition-colors text-slate-200">
+                    更新
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- 頁尾宣告 -->
+    <footer class="absolute bottom-4 text-center text-xs text-slate-600 font-orbitron z-10">
+        SECURE GATEWAY &copy; 2026 AUTOMATIC REDIRECT SYSTEM
+    </footer>
+
+    <!-- 主要運作邏輯 Script -->
     <script>
-        // AES-256 加密後的數據包 (SALT, IV, CIPHERTEXT 全數為 Hex 格式)
-        const ENCRYPTED_PAYLOAD = {
-            salt: "61336465356637383930616263646566",
-            iv: "313233343536373839303132",
-            // 完整頁面 DOM HTML 已使用密碼 'boss888' 通過 AES-256-GCM 密文處理
-            ciphertext: "RAW_CIPHERTEXT_PLACEHOLDER"
-        };
+        // --- 設定參數 ---
+        let targetUrl = "https://jackyeh1982.github.io/Tan-Tan-travel-diary/Switch%E4%BA%94%E6%9C%88/switch.html"; // 預設轉址目標
+        let totalSeconds = 5;                  // 總倒數秒數
+        let remainingTime = totalSeconds;     // 剩餘時間 (以秒為單位，支援小數)
+        let isPaused = false;
+        let timerInterval = null;
 
-        window.addEventListener('DOMContentLoaded', () => {
-            lucide.createIcons();
-            const savedPass = sessionStorage.getItem('dec_key');
-            if (savedPass) {
-                performDecryption(savedPass);
+        // SVG 環形參數
+        const circleRadius = 42;
+        const circleCircumference = 2 * Math.PI * circleRadius; // 約 263.89
+
+        // --- DOM 元素 ---
+        const countdownNumber = document.getElementById('countdownNumber');
+        const circleProgress = document.getElementById('circleProgress');
+        const targetUrlText = document.getElementById('targetUrlText');
+        const redirectNowBtn = document.getElementById('redirectNowBtn');
+        const pauseBtn = document.getElementById('pauseBtn');
+        const pauseIcon = document.getElementById('pauseIcon');
+        const pauseText = document.getElementById('pauseText');
+        const statusText = document.getElementById('statusText');
+        const statusDot = document.getElementById('statusDot');
+        const statusPing = document.getElementById('statusPing');
+        const toggleConfigBtn = document.getElementById('toggleConfigBtn');
+        const configPanel = document.getElementById('configPanel');
+        const customUrlInput = document.getElementById('customUrlInput');
+        const updateUrlBtn = document.getElementById('updateUrlBtn');
+
+        // --- 初始化頁面 ---
+        function init() {
+            // 初始化 SVG 圓環
+            circleProgress.style.strokeDasharray = `${circleCircumference} ${circleCircumference}`;
+            updateTargetUrlDisplay(targetUrl);
+            startCountdown();
+        }
+
+        // 更新目標網址顯示
+        function updateTargetUrlDisplay(url) {
+            targetUrl = url;
+            targetUrlText.textContent = url;
+            customUrlInput.value = url;
+        }
+
+        // --- 倒數計時邏輯 ---
+        function startCountdown() {
+            const updateInterval = 50; // 每 50ms 更新一次，讓動畫極度順暢
+            
+            clearInterval(timerInterval);
+            timerInterval = setInterval(() => {
+                if (isPaused) return;
+
+                remainingTime -= updateInterval / 1000;
+
+                if (remainingTime <= 0) {
+                    remainingTime = 0;
+                    clearInterval(timerInterval);
+                    executeRedirect();
+                }
+
+                updateUI();
+            }, updateInterval);
+        }
+
+        // 更新 UI 介面狀態
+        function updateUI() {
+            // 更新數字 (向上取整顯示秒數)
+            const displaySeconds = Math.ceil(remainingTime);
+            countdownNumber.textContent = displaySeconds;
+
+            // 更新環形進度條 (0 到 1 的比例)
+            const progressRatio = remainingTime / totalSeconds;
+            const offset = circleCircumference - (progressRatio * circleCircumference);
+            circleProgress.style.strokeDashoffset = offset;
+        }
+
+        // 執行跳轉
+        function executeRedirect() {
+            statusText.textContent = "REDIRECTING NOW...";
+            statusText.classList.add("text-cyber-cyan");
+            
+            // 跳轉動畫/視覺反饋
+            document.querySelector('main').classList.add('scale-95', 'opacity-80');
+            
+            setTimeout(() => {
+                window.location.href = targetUrl;
+            }, 300);
+        }
+
+        // --- 事件監聽 ---
+
+        // 1. 立即跳轉
+        redirectNowBtn.addEventListener('click', () => {
+            executeRedirect();
+        });
+
+        // 2. 暫停 / 恢復
+        pauseBtn.addEventListener('click', () => {
+            isPaused = !isPaused;
+
+            if (isPaused) {
+                pauseIcon.className = "fa-solid fa-play";
+                pauseText.textContent = "繼續";
+                statusText.textContent = "PAUSED";
+                statusDot.className = "relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-400";
+                statusPing.className = "hidden";
+                countdownNumber.classList.remove('neon-text-cyan');
+                countdownNumber.classList.add('text-slate-400');
+            } else {
+                pauseIcon.className = "fa-solid fa-pause";
+                pauseText.textContent = "暫停";
+                statusText.textContent = "SYSTEM REDIRECTING";
+                statusDot.className = "relative inline-flex rounded-full h-2.5 w-2.5 bg-cyber-cyan";
+                statusPing.className = "animate-ping absolute inline-flex h-full w-full rounded-full bg-cyber-cyan opacity-75";
+                countdownNumber.classList.add('neon-text-cyan');
+                countdownNumber.classList.remove('text-slate-400');
             }
         });
 
-        async function decryptAndShow(e) {
-            e.preventDefault();
-            const password = document.getElementById('password-input').value;
-            await performDecryption(password);
+        // 3. 切換設定面板
+        toggleConfigBtn.addEventListener('click', () => {
+            configPanel.classList.toggle('hidden');
+        });
+
+        // 4. 更新自訂網址
+        function applyCustomUrl() {
+            let newUrl = customUrlInput.value.trim();
+            if (!newUrl) return;
+
+            // 自動補充 http/https 協定
+            if (!/^https?:\/\//i.test(newUrl)) {
+                newUrl = 'https://' + newUrl;
+            }
+
+            updateTargetUrlDisplay(newUrl);
+            
+            // 重置計時器
+            remainingTime = totalSeconds;
+            if (isPaused) {
+                pauseBtn.click(); // 若暫停中則恢復
+            }
+            updateUI();
         }
 
-        async function performDecryption(password) {
-            const errorMsg = document.getElementById('error-msg');
-            const btn = document.getElementById('decrypt-btn');
-            errorMsg.classList.add('hidden');
+        updateUrlBtn.addEventListener('click', applyCustomUrl);
+        customUrlInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                applyCustomUrl();
+            }
+        });
 
-            try {
-                // 1. 將輸入密碼轉為 CryptoKey (PBKDF2)
-                const enc = new TextEncoder();
-                const keyMaterial = await window.crypto.subtle.importKey(
-                    "raw", enc.encode(password), { name: "PBKDF2" }, false, ["deriveKey"]
-                );
+        // --- 背景 3D 粒子背景動畫 (Canvas) ---
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
 
-                // 2. 使用 Salt 衍生出 AES-GCM 256-bit 金鑰 (100,000 次迭代)
-                const salt = hexToBuf(ENCRYPTED_PAYLOAD.salt);
-                const key = await window.crypto.subtle.deriveKey(
-                    { name: "PBKDF2", salt: salt, iterations: 100000, hash: "SHA-256" },
-                    keyMaterial,
-                    { name: "AES-GCM", length: 256 },
-                    false,
-                    ["decrypt"]
-                );
+        let particles = [];
+        const particleCount = 40;
 
-                // 3. 解密密文內容 (如密碼錯誤會拋出 CryptoError 異常)
-                const iv = hexToBuf(ENCRYPTED_PAYLOAD.iv);
-                let htmlText = "";
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
 
-                // 當為預設金鑰 boss888 或是動態解密成功時渲染內容
-                if (password === 'boss五月' || ENCRYPTED_PAYLOAD.ciphertext === "RAW_CIPHERTEXT_PLACEHOLDER") {
-                    htmlText = getOriginalHTMLContent();
-                } else {
-                    const decryptedBuf = await window.crypto.subtle.decrypt(
-                        { name: "AES-GCM", iv: iv }, key, hexToBuf(ENCRYPTED_PAYLOAD.ciphertext)
-                    );
-                    htmlText = new TextDecoder().decode(decryptedBuf);
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.5;
+                this.speedY = (Math.random() - 0.5) * 0.5;
+                this.opacity = Math.random() * 0.5 + 0.2;
+                this.color = Math.random() > 0.5 ? '#00f3ff' : '#b026ff';
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+                    this.reset();
                 }
+            }
 
-                // 4. 成功解密後將動態內容插入並顯示
-                sessionStorage.setItem('dec_key', password);
-                document.getElementById('password-modal').classList.add('hidden');
-                const container = document.getElementById('protected-content');
-                container.innerHTML = htmlText;
-                container.classList.remove('hidden');
-                lucide.createIcons();
-
-            } catch (err) {
-                errorMsg.classList.remove('hidden');
-                document.getElementById('password-input').value = '';
-                document.getElementById('password-input').focus();
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.globalAlpha = this.opacity;
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = this.color;
+                ctx.fill();
+                ctx.globalAlpha = 1.0;
+                ctx.shadowBlur = 0;
             }
         }
 
-        function hexToBuf(hex) {
-            const bytes = new Uint8Array(hex.length / 2);
-            for (let i = 0; i < hex.length; i += 2) {
-                bytes[i / 2] = parseInt(hex.substr(i, 2), 16);
+        function initParticles() {
+            particles = [];
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
             }
-            return bytes.buffer;
         }
 
-        function togglePasswordVisibility() {
-            const input = document.getElementById('password-input');
-            const icon = document.getElementById('eye-icon');
-            if (input.type === 'password') {
-                input.type = 'text';
-                icon.setAttribute('data-lucide', 'eye-off');
-            } else {
-                input.type = 'password';
-                icon.setAttribute('data-lucide', 'eye');
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // 繪製粒子間連線
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < 120) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = '#00f3ff';
+                        ctx.globalAlpha = (1 - dist / 120) * 0.15;
+                        ctx.stroke();
+                        ctx.globalAlpha = 1.0;
+                    }
+                }
             }
-            lucide.createIcons();
+
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+
+            requestAnimationFrame(animateParticles);
         }
 
-        // 動態還原結構函式
-        function getOriginalHTMLContent() {
-            return `
-            <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none z-0 overflow-hidden">
-                <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-neon-purple/20 rounded-full blur-[120px] animate-pulse-glow"></div>
-                <div class="absolute top-[30%] right-[-10%] w-[450px] h-[450px] bg-neon-cyan/20 rounded-full blur-[140px] animate-pulse-glow" style="animation-delay: 1.5s;"></div>
-            </div>
+        // 頁面載入後啟動
+        window.addEventListener('resize', () => {
+            resizeCanvas();
+            initParticles();
+        });
 
-            <section id="hero" class="relative pt-16 pb-8 flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 z-10 max-w-4xl mx-auto text-center">
-                <div class="relative group mb-6">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-pink rounded-full blur-xl opacity-75 group-hover:opacity-100 transition duration-500 animate-pulse-glow"></div>
-                    <div class="relative w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden p-1 bg-neon-dark border-2 border-white/20 animate-float">
-                        <img src="https://raw.githubusercontent.com/jackyeh1982/Tan-Tan-travel-diary/refs/heads/main/Switch%E4%BA%94%E6%9C%88/switchboss.jpg" alt="五月" class="w-full h-full object-cover rounded-full transform transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/400x400/101020/00f3ff?text=BOSS'"/>
-                    </div>
-                </div>
-                <h1 class="text-3xl sm:text-5xl font-black tracking-tight mb-4 leading-tight">Switch <span class="gradient-text">固件升級與更新指南</span></h1>
-                <p class="text-slate-400 text-sm sm:text-base max-w-xl mb-8">請嚴格照著以下步驟操作，確保 Switch 固件順利更新至最新版本！</p>
-                <a href="https://drive.google.com/uc?id=1du_AZM6GV8kjnZOwH4lekG4j6qDO9G2Y&export=download" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-pink text-white font-bold text-base shadow-lg hover:shadow-[0_0_30px_rgba(0,243,255,0.4)] hover:scale-105 active:scale-95 transition-all duration-300">
-                    <i data-lucide="download" class="w-5 h-5"></i> 下載固件升級包檔案 23.0.1|AMS1.12.1|E
-                </a>
-            </section>
-
-            <section class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-                <div class="space-y-4">
-                    <div class="glass-card p-6 rounded-2xl border-l-4 border-neon-cyan flex gap-4 items-start">
-                        <span class="flex-shrink-0 w-8 h-8 rounded-full bg-neon-cyan/20 text-neon-cyan font-black flex items-center justify-center text-sm">1</span>
-                        <div class="flex-1">
-                            <h3 class="text-lg font-bold text-white mb-1">下載並解壓縮整合包</h3>
-                            <p class="text-slate-300 text-sm leading-relaxed">點擊上方下載按鈕下載固件壓縮包，並將其解壓縮到電腦資料夾中備用。</p>
-                        </div>
-                    </div>
-                    <div class="glass-card p-6 rounded-2xl border-l-4 border-neon-purple flex gap-4 items-start">
-                        <span class="flex-shrink-0 w-8 h-8 rounded-full bg-neon-purple/20 text-neon-purple font-black flex items-center justify-center text-sm">2</span>
-                        <div class="flex-1">
-                            <h3 class="text-lg font-bold text-white mb-1">清理 Switch 記憶卡舊檔</h3>
-                            <p class="text-slate-300 text-sm leading-relaxed mb-2">將 Switch 關機，取出記憶卡插到電腦。</p>
-                            <div class="p-3 bg-red-950/40 border border-red-500/30 rounded-xl text-xl text-red-200">
-                                ⚠️ <strong>重要保留項目：</strong> 僅留下 <code class="bg-black/50 px-1.5 py-0.5 rounded text-neon-cyan">emummc</code> (一定要有)、<code class="bg-black/50 px-1.5 py-0.5 rounded text-slate-300">Nintendo</code> 與 <code class="bg-black/50 px-1.5 py-0.5 rounded text-slate-300">JKSV</code> (這兩個沒有沒關係) 這三個資料夾，<strong>其他檔案及資料夾全刪掉</strong>！
-                            </div>
-                        </div>
-                    </div>
-                    <div class="glass-card p-6 rounded-2xl border-l-4 border-neon-pink flex gap-4 items-start">
-                        <span class="flex-shrink-0 w-8 h-8 rounded-full bg-neon-pink/20 text-neon-pink font-black flex items-center justify-center text-sm">3</span>
-                        <div class="flex-1">
-                            <h3 class="text-lg font-bold text-white mb-1">複製新固件檔案</h3>
-                            <p class="text-slate-300 text-sm leading-relaxed">把步驟 1 下載解壓後的<strong class="text-neon-pink">「檔案全部 (不是整個資料夾)」</strong>直接複製貼到記憶卡根目錄裡。</p>
-                        </div>
-                    </div>
-                    <div class="glass-card p-6 rounded-2xl border-l-4 border-neon-cyan flex gap-4 items-start">
-                        <span class="flex-shrink-0 w-8 h-8 rounded-full bg-neon-cyan/20 text-neon-cyan font-black flex items-center justify-center text-sm">4</span>
-                        <div class="flex-1">
-                            <h3 class="text-lg font-bold text-white mb-1">插回記憶卡並開機</h3>
-                            <p class="text-slate-300 text-sm leading-relaxed">記憶卡放回 Switch，然後開機（如果是軟改機請使用注入器引導）。</p>
-                        </div>
-                    </div>
-                    <div class="glass-card p-6 rounded-2xl border-l-4 border-neon-purple flex gap-4 items-start">
-                        <span class="flex-shrink-0 w-8 h-8 rounded-full bg-neon-purple/20 text-neon-purple font-black flex items-center justify-center text-sm">5-6</span>
-                        <div class="flex-1">
-                            <h3 class="text-lg font-bold text-white mb-1">設定 Autoboot 自動開機</h3>
-                            <ol class="list-disc list-inside text-slate-300 text-sm space-y-1">
-                                <li>點擊右上角的 <strong class="text-white">Options</strong> 進去。</li>
-                                <li>點擊左上角的 <strong class="text-white">Autoboot</strong>。</li>
-                                <li>選擇第一個 <strong class="text-neon-cyan">CFW</strong>，然後點擊下方 <strong class="text-white">Save</strong> 保存。</li>
-                            </ol>
-                        </div>
-                    </div>
-                    <div class="glass-card p-6 rounded-2xl border-l-4 border-neon-pink flex gap-4 items-start">
-                        <span class="flex-shrink-0 w-8 h-8 rounded-full bg-neon-pink/20 text-neon-pink font-black flex items-center justify-center text-sm">7-8</span>
-                        <div class="flex-1">
-                            <h3 class="text-lg font-bold text-white mb-1">萃取 KEY (Lockpick) 與重啟</h3>
-                            <ol class="list-disc list-inside text-slate-300 text-sm space-y-1">
-                                <li>點擊最頂部的 <strong class="text-white">Home</strong>，選 <strong class="text-white">payloads</strong>，再選 <strong class="text-neon-pink">lockpick</strong>。</li>
-                                <li>進入後按一下<strong class="text-white">電源鍵</strong>進行取 Key，完成後再按一次<strong class="text-white">電源鍵</strong>。</li>
-                                <li>使用<strong class="text-white">音量鍵 +-</strong> 移動選擇到 <strong class="text-neon-cyan">reboot to hekate</strong>，按一下電源鍵確認。</li>
-                            </ol>
-                        </div>
-                    </div>
-                    <div class="glass-card p-6 rounded-2xl border-l-4 border-neon-cyan flex gap-4 items-start">
-                        <span class="flex-shrink-0 w-8 h-8 rounded-full bg-neon-cyan/20 text-neon-cyan font-black flex items-center justify-center text-sm">9-10</span>
-                        <div class="flex-1">
-                            <h3 class="text-lg font-bold text-white mb-1">執行 Daybreak 系統升級</h3>
-                            <ol class="list-disc list-inside text-slate-300 text-sm space-y-1">
-                                <li>進入系統後打開<strong class="text-white">相簿</strong>，找到 <strong class="text-neon-cyan">daybreak</strong> 程式點擊開啟。</li>
-                                <li>選擇 <strong class="text-white">安裝更新 (Install)</strong>，選取 <strong class="text-neon-purple">23.0.1</strong> 資料夾。</li>
-                                <li>一路無腦按 <strong class="text-neon-pink font-bold">A 鍵</strong>，等待進度條跑完 100% 後選擇 <strong class="text-white">reboot</strong> 重啟。</li>
-                            </ol>
-                        </div>
-                    </div>
-                    <div class="glass-card p-6 rounded-2xl border-2 border-neon-cyan/50 bg-neon-cyan/5 flex gap-4 items-start shadow-[0_0_30px_rgba(0,243,255,0.15)]">
-                        <span class="flex-shrink-0 w-8 h-8 rounded-full bg-neon-cyan text-black font-black flex items-center justify-center text-sm">11</span>
-                        <div class="flex-1">
-                            <h3 class="text-lg font-bold text-neon-cyan mb-1 flex items-center gap-2">
-                                <i data-lucide="check-circle-2" class="w-5 h-5"></i>
-                                驗證版本完成更新
-                            </h3>
-                            <p class="text-slate-300 text-sm leading-relaxed mb-2">再次開機進入系統後，至 <strong class="text-white">設定 -> 系統</strong> 查看系統版本：</p>
-                            <div class="inline-block px-3 py-1.5 rounded-lg bg-black/60 border border-neon-cyan/40 text-neon-cyan font-mono text-sm font-bold">
-                                23.0.1|AMS1.12.1|E
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <footer class="border-t border-white/10 relative z-10 bg-black/40 py-8">
-                <div class="max-w-4xl mx-auto px-4 text-center">
-                    <p class="text-slate-500 text-xs sm:text-sm">&copy; Switch 固件教學專頁 · 請按步驟謹慎操作</p>
-                </div>
-            </footer>
-            `;
-        }
+        window.onload = function() {
+            resizeCanvas();
+            initParticles();
+            animateParticles();
+            init();
+        };
     </script>
 </body>
 </html>
